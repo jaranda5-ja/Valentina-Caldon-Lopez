@@ -1,39 +1,187 @@
-<body class="dia1-body">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Día 1</title>
 
-<div class="dia-container">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <!-- GALERIA -->
-  <div class="galeria">
-    <button class="btn left" onclick="prev()">❮</button>
-    <img id="imgDia" src="img/dia1-1.jpg">
-    <button class="btn right" onclick="next()">❯</button>
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(270deg, #ffecd2, #fcb69f, #ffdde1, #f8b500);
+  background-size: 600% 600%;
+  animation: fondo 12s ease infinite;
+}
+
+@keyframes fondo {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+header {
+  text-align: center;
+  padding: 60px;
+  color: white;
+}
+
+header h1 {
+  font-size: 50px;
+}
+
+/* CONTENEDOR */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* TARJETA */
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* IMAGEN CONTENEDOR FIJO */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 400px; /* 🔥 tamaño fijo */
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* TODAS LAS IMÁGENES IGUALES */
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 clave para que todas se vean iguales */
+  border-radius: 20px;
+  transition: opacity 0.5s ease;
+}
+
+/* BOTONES */
+.controls {
+  margin-top: 10px;
+  text-align: center;
+}
+
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* TEXTO */
+.texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.texto h2 {
+  color: #ff4d6d;
+  border-left: 5px solid #ff4d6d;
+  padding-left: 10px;
+}
+
+.texto p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* BOTÓN */
+.boton {
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .slider {
+    height: 300px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎨 Día 1</h1>
+</header>
+
+<div class="container">
+  <div class="card">
+
+    <!-- 🖼 SLIDER -->
+    <div>
+      <div class="slider">
+        <img id="imagen" src="img/dia1-1.jpg">
+      </div>
+
+      <div class="controls">
+        <button onclick="prev()">⬅</button>
+        <button onclick="next()">➡</button>
+      </div>
+    </div>
+
+    <!-- 🧠 TEXTO FIJO -->
+    <div class="texto">
+      <h2>👀 Observación y experiencia</h2>
+      <p>
+        En este primer día se realizó un reconocimiento del entorno educativo,
+        permitiendo observar la dinámica del aula, la interacción entre los niños
+        y el rol del docente dentro del proceso formativo.
+      </p>
+
+      <p>
+        Esta experiencia permitió comprender que el aprendizaje no solo depende
+        de los contenidos, sino también del ambiente, la motivación y la forma en
+        que se guía a los estudiantes.
+      </p>
+
+      <p>
+        Se destaca la importancia de observar antes de intervenir, entendiendo
+        las necesidades del grupo para fortalecer estrategias pedagógicas efectivas.
+      </p>
+
+      <a href="index.html" class="boton">⬅ Volver</a>
+    </div>
+
   </div>
-
-  <!-- CONTENIDO -->
-  <div class="contenido">
-    <h1 class="titulo-dia">🌞 Día 1</h1>
-
-    <div class="bloque">
-      <h3>🔍 Observo</h3>
-      <p>Se analizó el entorno del aula y la interacción entre docente y estudiantes.</p>
-    </div>
-
-    <div class="bloque">
-      <h3>🤝 Participo</h3>
-      <p>Se apoyó en actividades básicas fortaleciendo la conexión con los niños.</p>
-    </div>
-
-    <div class="bloque">
-      <h3>💡 Aprendo</h3>
-      <p>Se comprendió la importancia del ambiente en el aprendizaje infantil.</p>
-    </div>
-
-  </div>
-
 </div>
 
 <script>
-let imagenes = [
+let index = 0;
+
+const imagenes = [
   "img/dia1-1.jpg",
   "img/dia1-2.jpg",
   "img/dia1-3.jpg",
@@ -45,21 +193,21 @@ let imagenes = [
   "img/dia1-9.jpg"
 ];
 
-let index = 0;
-
-function showImage() {
-  document.getElementById("imgDia").src = imagenes[index];
+function mostrar() {
+  document.getElementById("imagen").src = imagenes[index];
 }
 
 function next() {
   index = (index + 1) % imagenes.length;
-  showImage();
+  mostrar();
 }
 
 function prev() {
   index = (index - 1 + imagenes.length) % imagenes.length;
-  showImage();
+  mostrar();
 }
 </script>
 
 </body>
+</html>
+
