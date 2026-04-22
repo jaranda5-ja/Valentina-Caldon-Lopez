@@ -7,178 +7,146 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* ========================= */
+/* 🔥 BASE */
+/* ========================= */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(270deg, #ffecd2, #fcb69f, #ffdde1, #f8b500);
-  background-size: 600% 600%;
-  animation: fondo 12s ease infinite;
+  background: linear-gradient(135deg, #fceabb, #f8b500);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-@keyframes fondo {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-header {
-  text-align: center;
-  padding: 60px;
-  color: white;
-}
-
-header h1 {
-  font-size: 50px;
-}
-
-/* CONTENEDOR */
+/* ========================= */
+/* 💎 CONTENEDOR */
+/* ========================= */
 .container {
+  width: 90%;
   max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* TARJETA */
-.card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.95);
   border-radius: 25px;
-  padding: 25px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-}
-
-/* IMAGEN CONTENEDOR FIJO */
-.slider {
-  position: relative;
-  width: 100%;
-  height: 400px; /* 🔥 tamaño fijo */
+  display: flex;
   overflow: hidden;
-  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
 
-/* TODAS LAS IMÁGENES IGUALES */
+/* ========================= */
+/* 🎬 SLIDER */
+/* ========================= */
+.slider {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
 .slider img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 🔥 clave para que todas se vean iguales */
-  border-radius: 20px;
-  transition: opacity 0.5s ease;
+  object-fit: cover;
+  transition: opacity 0.6s ease, transform 6s ease;
 }
 
-/* BOTONES */
-.controls {
-  margin-top: 10px;
-  text-align: center;
-}
-
-button {
-  padding: 8px 12px;
-  margin: 5px;
-  border: none;
-  border-radius: 10px;
-  background: #ff4d6d;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
+/* EFECTO CINE */
+.slider img.zoom {
   transform: scale(1.1);
 }
 
-/* TEXTO */
+/* ========================= */
+/* 🧠 TEXTO */
+/* ========================= */
 .texto {
+  width: 50%;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.texto h2 {
-  color: #ff4d6d;
-  border-left: 5px solid #ff4d6d;
-  padding-left: 10px;
+.texto h1 {
+  color: #ff006e;
+  margin-bottom: 10px;
 }
 
 .texto p {
-  color: #333;
+  font-size: 17px;
   line-height: 1.6;
 }
 
-/* BOTÓN */
-.boton {
-  margin-top: 20px;
-  padding: 10px;
+/* ========================= */
+/* 🔘 CONTROLES */
+/* ========================= */
+.controls {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
   text-align: center;
-  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+}
+
+.controls button {
+  background: rgba(0,0,0,0.4);
   color: white;
-  border-radius: 12px;
-  text-decoration: none;
+  border: none;
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .card {
-    grid-template-columns: 1fr;
-  }
-
-  .slider {
-    height: 300px;
-  }
+/* DOTS */
+#dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
 }
+
+#dots span.active {
+  background: #ff006e;
+  transform: scale(1.3);
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>🎨 Día 1</h1>
-</header>
-
 <div class="container">
-  <div class="card">
 
-    <!-- 🖼 SLIDER -->
-    <div>
-      <div class="slider">
-        <img id="imagen" src="img/dia1-1.jpg">
-      </div>
+  <!-- 🎬 IMÁGENES -->
+  <div class="slider">
+    <img id="img" src="img/dia1-1.jpg">
 
-      <div class="controls">
-        <button onclick="prev()">⬅</button>
-        <button onclick="next()">➡</button>
-      </div>
+    <div class="controls">
+      <button onclick="prev()">⬅</button>
+      <button onclick="next()">➡</button>
+      <div id="dots"></div>
     </div>
-
-    <!-- 🧠 TEXTO FIJO -->
-    <div class="texto">
-      <h2>👀 Observación y experiencia</h2>
-      <p>
-        En este primer día se realizó un reconocimiento del entorno educativo,
-        permitiendo observar la dinámica del aula, la interacción entre los niños
-        y el rol del docente dentro del proceso formativo.
-      </p>
-
-      <p>
-        Esta experiencia permitió comprender que el aprendizaje no solo depende
-        de los contenidos, sino también del ambiente, la motivación y la forma en
-        que se guía a los estudiantes.
-      </p>
-
-      <p>
-        Se destaca la importancia de observar antes de intervenir, entendiendo
-        las necesidades del grupo para fortalecer estrategias pedagógicas efectivas.
-      </p>
-
-      <a href="index.html" class="boton">⬅ Volver</a>
-    </div>
-
   </div>
+
+  <!-- 🧠 TEXTO -->
+  <div class="texto">
+    <h1>🎨 Día 1</h1>
+    <p>
+      Este primer día marcó el inicio de una experiencia significativa dentro del proceso de práctica pedagógica.
+      Se realizó la observación del entorno educativo, identificando dinámicas, comportamientos y metodologías aplicadas.
+      <br><br>
+      Fue un espacio clave para comprender la interacción entre docente y estudiantes,
+      así como el ambiente de aprendizaje que se construye en el aula.
+    </p>
+  </div>
+
 </div>
 
 <script>
+
 let index = 0;
 
 const imagenes = [
@@ -193,8 +161,37 @@ const imagenes = [
   "img/dia1-9.jpg"
 ];
 
+const img = document.getElementById("img");
+const dotsContainer = document.getElementById("dots");
+
+/* DOTS */
+imagenes.forEach((_, i) => {
+  const dot = document.createElement("span");
+  dot.onclick = () => irA(i);
+  dotsContainer.appendChild(dot);
+});
+
+function actualizarDots() {
+  const dots = document.querySelectorAll("#dots span");
+  dots.forEach(d => d.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+/* EFECTO CINE */
 function mostrar() {
-  document.getElementById("imagen").src = imagenes[index];
+  img.style.opacity = 0;
+
+  setTimeout(() => {
+    img.src = imagenes[index];
+    img.classList.remove("zoom");
+
+    setTimeout(() => {
+      img.classList.add("zoom");
+    }, 50);
+
+    img.style.opacity = 1;
+    actualizarDots();
+  }, 300);
 }
 
 function next() {
@@ -206,6 +203,17 @@ function prev() {
   index = (index - 1 + imagenes.length) % imagenes.length;
   mostrar();
 }
+
+function irA(i) {
+  index = i;
+  mostrar();
+}
+
+/* AUTO */
+setInterval(next, 4000);
+
+mostrar();
+
 </script>
 
 </body>
