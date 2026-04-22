@@ -1,1 +1,66 @@
+<body class="dia2-body">
 
+<div class="dia2-container">
+
+  <!-- GALERIA -->
+  <div class="dia2-galeria">
+    <button class="btn left" onclick="prev()">❮</button>
+    <img id="imgDia2" src="img/dia1-6.jpg">
+    <button class="btn right" onclick="next()">❯</button>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="dia2-content">
+
+    <h1 class="dia2-title">🌿 Día 2</h1>
+
+    <div class="dia2-box">
+      <h3>🔍 Analizo</h3>
+      <p>Los niños construyen conocimiento mediante el juego con fichas y bloques, explorando su entorno de forma activa.</p>
+    </div>
+
+    <div class="dia2-box">
+      <h3>🤝 Interacción</h3>
+      <p>Se evidenció trabajo grupal, momentos individuales y resolución de conflictos mediante el diálogo guiado.</p>
+    </div>
+
+    <div class="dia2-box">
+      <h3>🎲 Aprendizaje</h3>
+      <p>El juego “tingo tango” fortaleció el reconocimiento del nombre y el acercamiento al lenguaje.</p>
+    </div>
+
+    <div class="dia2-box">
+      <h3>📚 Reflexión</h3>
+      <p>El aprendizaje surge de la experiencia. Piaget y Bruner respaldan el juego como base del desarrollo cognitivo.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+let imagenes2 = [
+  "img/dia1-6.jpg",
+  "img/dia1-7.jpg",
+  "img/dia1-8.jpg",
+  "img/dia1-9.jpg"
+];
+
+let index2 = 0;
+
+function showImage2() {
+  document.getElementById("imgDia2").src = imagenes2[index2];
+}
+
+function next() {
+  index2 = (index2 + 1) % imagenes2.length;
+  showImage2();
+}
+
+function prev() {
+  index2 = (index2 - 1 + imagenes2.length) % imagenes2.length;
+  showImage2();
+}
+</script>
+
+</body>
