@@ -2,62 +2,88 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diario de Campo Pedagógico</title>
+  <title>Día X - Diario de Campo</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<!-- 🔥 CAMBIA LA CLASE SEGÚN EL DÍA -->
+<body class="diaX">
 
-  <!-- HEADER -->
+  <!-- 🎨 HEADER -->
   <header>
-    <h1>📚 Diario de Campo Pedagógico</h1>
-    <p>Estudiante: Valentina Caldon López</p>
+    <h1>Día X - Nombre de la Actividad</h1>
+    <p>“El aprendizaje nace cuando el niño crea, explora y siente.”</p>
   </header>
 
-  <!-- INTRO -->
-  <section class="intro">
-    <h2>Bienvenida</h2>
+  <!-- 📌 INFORMACIÓN -->
+  <section class="reveal">
+    <h2>📌 Información General</h2>
+    <ul>
+      <li><strong>Fecha:</strong> </li>
+      <li><strong>Lugar:</strong> </li>
+      <li><strong>Momento:</strong> </li>
+      <li><strong>Estudiante:</strong> </li>
+      <li><strong>Actividad:</strong> </li>
+      <li><strong>Diario #:</strong> </li>
+    </ul>
+  </section>
+
+  <!-- 📸 IMÁGENES -->
+  <section class="reveal">
+    <h2>📸 Evidencia Fotográfica</h2>
+
+    <img src="img/diaX-1.jpg" class="imagen">
+    <img src="img/diaX-2.jpg" class="imagen">
+
+  </section>
+
+  <!-- 📝 DESCRIPCIÓN -->
+  <section class="reveal">
+    <h2>📝 Descripción - Narrativa</h2>
     <p>
-      Este sitio web presenta el proceso de práctica pedagógica en educación inicial,
-      donde se recopilan experiencias, observaciones y reflexiones desarrolladas en el aula.
+      Escribe aquí la descripción completa de lo ocurrido en la práctica.
     </p>
   </section>
 
-  <!-- TARJETAS DE DÍAS -->
-  <main class="contenedor">
+  <!-- 🧠 ANÁLISIS -->
+  <section class="reveal">
+    <h2>🧠 Análisis Epistémico</h2>
+    <p>
+      Relaciona aquí con autores como Piaget, Vygotsky, Bruner, etc.
+    </p>
+  </section>
 
-    <a href="dia1.html" class="card">
-      <h2>Día 1</h2>
-      <p>Actividad artística con figuras geométricas</p>
-    </a>
+  <!-- 💭 REFLEXIÓN -->
+  <section class="reveal">
+    <h2>💭 Reflexión Pedagógica</h2>
+    <p>
+      Escribe tu reflexión como futura docente.
+    </p>
+  </section>
 
-    <a href="dia2.html" class="card">
-      <h2>Día 2</h2>
-      <p>Fichas, bloques y juego tingo tango</p>
-    </a>
+  <!-- 🔙 BOTÓN -->
+  <div style="text-align:center; margin: 30px;">
+    <a href="index.html" class="card">← Volver al inicio</a>
+  </div>
 
-    <a href="dia3.html" class="card">
-      <h2>Día 3</h2>
-      <p>Actividad pedagógica en el aula</p>
-    </a>
+  <!-- ⚡ SCRIPT ANIMACIÓN -->
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
 
-    <a href="dia4.html" class="card">
-      <h2>Día 4</h2>
-      <p>Interacción y aprendizaje significativo</p>
-    </a>
+    window.addEventListener("scroll", () => {
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
 
-    <a href="dia5.html" class="card">
-      <h2>Día 5</h2>
-      <p>Reflexión pedagógica y experiencia</p>
-    </a>
+        if (elementTop < windowHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    });
+  </script>
 
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 - Proyecto de práctica pedagógica</p>
-  </footer>
+</body>
+</html>
 
 </body>
 </html>
