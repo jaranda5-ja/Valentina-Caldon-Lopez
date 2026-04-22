@@ -1,96 +1,75 @@
-/* RESET GENERAL + ANIMACIÓN */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  animation: fadeIn 0.8s ease-in;
+/* ✨ EFECTO SCROLL (APARECER SUAVE) */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
-/* ANIMACIÓN */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* HEADER */
-header {
-  padding: 40px;
-  text-align: center;
-  color: white;
-}
-
-/* SECCIONES */
+/* 💎 TARJETAS MÁS PREMIUM */
 section {
-  background: white;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* TITULOS */
-h2 {
-  padding-left: 10px;
-  border-left: 5px solid;
-}
-
-/* IMÁGENES (VERSIÓN PRO) */
-.imagen {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 15px;
-  display: block;
-  margin: 20px auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  margin: 25px;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
 }
 
-.imagen:hover {
-  transform: scale(1.05);
+section:hover {
+  transform: translateY(-5px);
 }
 
-/* BOTÓN */
-.card {
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: white;
+/* 🌈 DECORACIÓN SUAVE (FORMAS DE FONDO) */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  z-index: 0;
 }
 
-/* ========================= */
-/* 🎨 ESTILOS POR DÍA */
-/* ========================= */
-
-/* 🌞 DÍA 1 */
-.dia1 {
-  background: linear-gradient(135deg, #fceabb, #f8b500);
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -60px;
+  right: -60px;
+  width: 250px;
+  height: 250px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  z-index: 0;
 }
-.dia1 h2 { border-color: #ff4d6d; color: #ff4d6d; }
-.dia1 .card { background: #ff4d6d; }
 
-/* 🌿 DÍA 2 */
-.dia2 {
-  background: linear-gradient(135deg, #d4fc79, #96e6a1);
+/* ✍️ ESTILO TEXTO (tipo carta bonita) */
+p {
+  line-height: 1.6;
+  color: #333;
+  font-size: 16px;
 }
-.dia2 h2 { border-color: #2b9348; color: #2b9348; }
-.dia2 .card { background: #2b9348; }
 
-/* 🌊 DÍA 3 */
-.dia3 {
-  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+/* 💖 TÍTULOS MÁS ELEGANTES */
+h2 {
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
-.dia3 h2 { border-color: #0077b6; color: #0077b6; }
-.dia3 .card { background: #0077b6; }
 
-/* 🌸 DÍA 4 */
-.dia4 {
-  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+/* 🎀 DETALLE DECORATIVO */
+h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 5px;
+  border-radius: 5px;
+  background: currentColor;
 }
-.dia4 h2 { border-color: #d63384; color: #d63384; }
-.dia4 .card { background: #d63384; }
-
-/* 🔥 DÍA 5 */
-.dia5 {
-  background: linear-gradient(135deg, #f6d365, #fda085);
-}
-.dia5 h2 { border-color: #e85d04; color: #e85d04; }
-.dia5 .card { background: #e85d04; }
