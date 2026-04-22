@@ -38,11 +38,11 @@ header h1 {
   padding: 20px;
 }
 
-/* CARD */
+/* TARJETA */
 .card {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  gap: 30px;
   background: rgba(255,255,255,0.9);
   backdrop-filter: blur(12px);
   border-radius: 25px;
@@ -50,11 +50,22 @@ header h1 {
   box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
 
-/* IMAGEN */
+/* IMAGEN CONTENEDOR FIJO */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 400px; /* 🔥 tamaño fijo */
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* TODAS LAS IMÁGENES IGUALES */
 .slider img {
   width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 clave para que todas se vean iguales */
   border-radius: 20px;
-  transition: 0.5s;
+  transition: opacity 0.5s ease;
 }
 
 /* BOTONES */
@@ -87,6 +98,8 @@ button:hover {
 
 .texto h2 {
   color: #ff4d6d;
+  border-left: 5px solid #ff4d6d;
+  padding-left: 10px;
 }
 
 .texto p {
@@ -94,7 +107,7 @@ button:hover {
   line-height: 1.6;
 }
 
-/* BOTÓN VOLVER */
+/* BOTÓN */
 .boton {
   margin-top: 20px;
   padding: 10px;
@@ -110,6 +123,10 @@ button:hover {
   .card {
     grid-template-columns: 1fr;
   }
+
+  .slider {
+    height: 300px;
+  }
 }
 </style>
 </head>
@@ -124,8 +141,10 @@ button:hover {
   <div class="card">
 
     <!-- 🖼 SLIDER -->
-    <div class="slider">
-      <img id="imagen" src="img/dia1-1.jpg">
+    <div>
+      <div class="slider">
+        <img id="imagen" src="img/dia1-1.jpg">
+      </div>
 
       <div class="controls">
         <button onclick="prev()">⬅</button>
@@ -133,11 +152,24 @@ button:hover {
       </div>
     </div>
 
-    <!-- 🧠 TEXTO -->
+    <!-- 🧠 TEXTO FIJO -->
     <div class="texto">
-      <h2 id="titulo">Observación</h2>
-      <p id="descripcion">
-        Primer acercamiento al entorno educativo.
+      <h2>👀 Observación y experiencia</h2>
+      <p>
+        En este primer día se realizó un reconocimiento del entorno educativo,
+        permitiendo observar la dinámica del aula, la interacción entre los niños
+        y el rol del docente dentro del proceso formativo.
+      </p>
+
+      <p>
+        Esta experiencia permitió comprender que el aprendizaje no solo depende
+        de los contenidos, sino también del ambiente, la motivación y la forma en
+        que se guía a los estudiantes.
+      </p>
+
+      <p>
+        Se destaca la importancia de observar antes de intervenir, entendiendo
+        las necesidades del grupo para fortalecer estrategias pedagógicas efectivas.
       </p>
 
       <a href="index.html" class="boton">⬅ Volver</a>
@@ -149,67 +181,29 @@ button:hover {
 <script>
 let index = 0;
 
-const data = [
-  {
-    img: "img/dia1-1.jpg",
-    titulo: "👀 Observación",
-    texto: "Primer acercamiento al entorno educativo y dinámica del aula."
-  },
-  {
-    img: "img/dia1-2.jpg",
-    titulo: "📚 Contexto",
-    texto: "Se identifican espacios de aprendizaje y comportamiento de los niños."
-  },
-  {
-    img: "img/dia1-3.jpg",
-    titulo: "🤝 Interacción",
-    texto: "Relación entre docente y estudiantes en actividades diarias."
-  },
-  {
-    img: "img/dia1-4.jpg",
-    titulo: "🎯 Enfoque",
-    texto: "Actividades centradas en participación y exploración."
-  },
-  {
-    img: "img/dia1-5.jpg",
-    titulo: "💡 Reflexión",
-    texto: "El aprendizaje también depende del ambiente emocional."
-  },
-  {
-    img: "img/dia1-6.jpg",
-    titulo: "🌱 Proceso",
-    texto: "Cada niño aprende de forma distinta dentro del aula."
-  },
-  {
-    img: "img/dia1-7.jpg",
-    titulo: "🧠 Observación",
-    texto: "Importancia de analizar antes de intervenir."
-  },
-  {
-    img: "img/dia1-8.jpg",
-    titulo: "🚀 Aprendizaje",
-    texto: "Se fortalece la comprensión del rol docente."
-  },
-  {
-    img: "img/dia1-9.jpg",
-    titulo: "✨ Conclusión",
-    texto: "Un inicio que marca la base del proceso pedagógico."
-  }
+const imagenes = [
+  "img/dia1-1.jpg",
+  "img/dia1-2.jpg",
+  "img/dia1-3.jpg",
+  "img/dia1-4.jpg",
+  "img/dia1-5.jpg",
+  "img/dia1-6.jpg",
+  "img/dia1-7.jpg",
+  "img/dia1-8.jpg",
+  "img/dia1-9.jpg"
 ];
 
 function mostrar() {
-  document.getElementById("imagen").src = data[index].img;
-  document.getElementById("titulo").innerHTML = data[index].titulo;
-  document.getElementById("descripcion").innerHTML = data[index].texto;
+  document.getElementById("imagen").src = imagenes[index];
 }
 
 function next() {
-  index = (index + 1) % data.length;
+  index = (index + 1) % imagenes.length;
   mostrar();
 }
 
 function prev() {
-  index = (index - 1 + data.length) % data.length;
+  index = (index - 1 + imagenes.length) % imagenes.length;
   mostrar();
 }
 </script>
