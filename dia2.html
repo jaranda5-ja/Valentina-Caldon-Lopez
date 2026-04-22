@@ -1,66 +1,227 @@
-<body class="dia2-body">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Día 2</title>
 
-<div class="dia2-container">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <!-- GALERIA -->
-  <div class="dia2-galeria">
-    <button class="btn left" onclick="prev()">❮</button>
-    <img id="imgDia2" src="img/dia1-6.jpg">
-    <button class="btn right" onclick="next()">❯</button>
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #d4f8e8, #a8e6cf);
+}
+
+/* HEADER LIMPIO */
+header {
+  text-align: center;
+  padding: 40px 20px 10px;
+  color: #2ecc71;
+}
+
+header h1 {
+  font-size: 42px;
+  margin: 0;
+}
+
+/* CONTENEDOR */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* TARJETA */
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  background: white;
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+/* SLIDER */
+.slider {
+  position: relative;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.6s ease;
+}
+
+/* BOTONES MINIMAL */
+.controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+button {
+  border: none;
+  background: #2ecc71;
+  color: white;
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* TEXTO */
+.texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* BLOQUES LIMPIOS */
+.box {
+  background: #f1fff7;
+  border-left: 5px solid #2ecc71;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.box h3 {
+  margin: 0;
+  color: #27ae60;
+}
+
+.box p {
+  margin: 5px 0 0;
+  color: #444;
+  font-size: 14px;
+}
+
+/* BOTÓN */
+.boton {
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  background: #2ecc71;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .slider {
+    height: 280px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌿 Día 2</h1>
+</header>
+
+<div class="container">
+  <div class="card">
+
+    <!-- SLIDER -->
+    <div>
+      <div class="slider">
+        <img id="imagen2" src="img/dia1-6.jpg">
+      </div>
+
+      <div class="controls">
+        <button onclick="prev()">⬅</button>
+        <button onclick="next()">➡</button>
+      </div>
+    </div>
+
+    <!-- TEXTO LIMPIO -->
+    <div class="texto">
+
+      <div class="box">
+        <h3>🔍 Analizo</h3>
+        <p>El aprendizaje se construye mediante la exploración con fichas y bloques.</p>
+      </div>
+
+      <div class="box">
+        <h3>🤝 Interacción</h3>
+        <p>Se evidenció trabajo grupal y resolución de conflictos con diálogo.</p>
+      </div>
+
+      <div class="box">
+        <h3>🎲 Estrategia</h3>
+        <p>El juego “tingo tango” facilitó el reconocimiento del nombre.</p>
+      </div>
+
+      <div class="box">
+        <h3>📚 Reflexión</h3>
+        <p>El juego es clave en el desarrollo, como lo plantean Piaget y Bruner.</p>
+      </div>
+
+      <a href="index.html" class="boton">⬅ Volver</a>
+
+    </div>
+
   </div>
-
-  <!-- CONTENIDO -->
-  <div class="dia2-content">
-
-    <h1 class="dia2-title">🌿 Día 2</h1>
-
-    <div class="dia2-box">
-      <h3>🔍 Analizo</h3>
-      <p>Los niños construyen conocimiento mediante el juego con fichas y bloques, explorando su entorno de forma activa.</p>
-    </div>
-
-    <div class="dia2-box">
-      <h3>🤝 Interacción</h3>
-      <p>Se evidenció trabajo grupal, momentos individuales y resolución de conflictos mediante el diálogo guiado.</p>
-    </div>
-
-    <div class="dia2-box">
-      <h3>🎲 Aprendizaje</h3>
-      <p>El juego “tingo tango” fortaleció el reconocimiento del nombre y el acercamiento al lenguaje.</p>
-    </div>
-
-    <div class="dia2-box">
-      <h3>📚 Reflexión</h3>
-      <p>El aprendizaje surge de la experiencia. Piaget y Bruner respaldan el juego como base del desarrollo cognitivo.</p>
-    </div>
-
-  </div>
-
 </div>
 
 <script>
-let imagenes2 = [
+let index2 = 0;
+
+/* SOLO IMÁGENES DEL DÍA 2 */
+const imagenes2 = [
   "img/dia1-6.jpg",
   "img/dia1-7.jpg",
   "img/dia1-8.jpg",
   "img/dia1-9.jpg"
 ];
 
-let index2 = 0;
+function mostrar2() {
+  const img = document.getElementById("imagen2");
+  img.style.opacity = 0;
 
-function showImage2() {
-  document.getElementById("imgDia2").src = imagenes2[index2];
+  setTimeout(() => {
+    img.src = imagenes2[index2];
+    img.style.opacity = 1;
+  }, 300);
 }
 
 function next() {
   index2 = (index2 + 1) % imagenes2.length;
-  showImage2();
+  mostrar2();
 }
 
 function prev() {
   index2 = (index2 - 1 + imagenes2.length) % imagenes2.length;
-  showImage2();
+  mostrar2();
 }
 </script>
 
 </body>
+</html>
