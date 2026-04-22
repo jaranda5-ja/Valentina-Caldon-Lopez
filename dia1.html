@@ -9,13 +9,12 @@
 <style>
 
 /* ========================= */
-/* 🔥 BASE */
+/* 🔥 BASE LIMPIO */
 /* ========================= */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #fceabb, #f8b500);
-  color: #333;
+  background: #f4f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,34 +25,28 @@ body {
 /* 💎 CONTENEDOR */
 /* ========================= */
 .container {
-  width: 90%;
-  max-width: 1100px;
-  background: rgba(255,255,255,0.95);
-  border-radius: 25px;
+  width: 1000px;
+  height: 550px;
+  background: white;
+  border-radius: 20px;
   display: flex;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
 /* ========================= */
-/* 🎬 SLIDER */
+/* 🎬 SLIDER (FIJO) */
 /* ========================= */
 .slider {
   width: 50%;
-  position: relative;
-  overflow: hidden;
+  height: 100%;
 }
 
 .slider img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: opacity 0.6s ease, transform 6s ease;
-}
-
-/* EFECTO CINE */
-.slider img.zoom {
-  transform: scale(1.1);
+  object-fit: cover; /* 🔥 CLAVE: todas iguales */
+  transition: opacity 0.5s ease;
 }
 
 /* ========================= */
@@ -68,49 +61,52 @@ body {
 }
 
 .texto h1 {
+  margin: 0;
+  font-size: 30px;
   color: #ff006e;
-  margin-bottom: 10px;
 }
 
 .texto p {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.6;
+  margin-top: 15px;
 }
 
 /* ========================= */
-/* 🔘 CONTROLES */
+/* 🔘 CONTROLES LIMPIOS */
 /* ========================= */
 .controls {
   position: absolute;
-  bottom: 15px;
-  width: 100%;
-  text-align: center;
+  bottom: 20px;
+  left: 20px;
 }
 
 .controls button {
-  background: rgba(0,0,0,0.4);
-  color: white;
   border: none;
-  margin: 5px;
-  padding: 8px 12px;
-  border-radius: 8px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 6px 10px;
+  margin-right: 5px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
 /* DOTS */
+#dots {
+  margin-top: 8px;
+}
+
 #dots span {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 5px;
+  width: 8px;
+  height: 8px;
   background: #ccc;
   border-radius: 50%;
-  cursor: pointer;
+  margin: 3px;
 }
 
 #dots span.active {
   background: #ff006e;
-  transform: scale(1.3);
 }
 
 </style>
@@ -125,21 +121,20 @@ body {
     <img id="img" src="img/dia1-1.jpg">
 
     <div class="controls">
-      <button onclick="prev()">⬅</button>
-      <button onclick="next()">➡</button>
+      <button onclick="prev()">◀</button>
+      <button onclick="next()">▶</button>
       <div id="dots"></div>
     </div>
   </div>
 
   <!-- 🧠 TEXTO -->
   <div class="texto">
-    <h1>🎨 Día 1</h1>
+    <h1>Día 1</h1>
     <p>
-      Este primer día marcó el inicio de una experiencia significativa dentro del proceso de práctica pedagógica.
-      Se realizó la observación del entorno educativo, identificando dinámicas, comportamientos y metodologías aplicadas.
+      Este primer día marcó el inicio del proceso de práctica pedagógica, permitiendo una observación detallada del entorno educativo.
       <br><br>
-      Fue un espacio clave para comprender la interacción entre docente y estudiantes,
-      así como el ambiente de aprendizaje que se construye en el aula.
+      Se identificaron dinámicas de interacción, metodologías de enseñanza y el comportamiento de los estudiantes dentro del aula,
+      generando una comprensión inicial del contexto formativo.
     </p>
   </div>
 
@@ -167,7 +162,6 @@ const dotsContainer = document.getElementById("dots");
 /* DOTS */
 imagenes.forEach((_, i) => {
   const dot = document.createElement("span");
-  dot.onclick = () => irA(i);
   dotsContainer.appendChild(dot);
 });
 
@@ -177,21 +171,14 @@ function actualizarDots() {
   dots[index].classList.add("active");
 }
 
-/* EFECTO CINE */
 function mostrar() {
   img.style.opacity = 0;
 
   setTimeout(() => {
     img.src = imagenes[index];
-    img.classList.remove("zoom");
-
-    setTimeout(() => {
-      img.classList.add("zoom");
-    }, 50);
-
     img.style.opacity = 1;
     actualizarDots();
-  }, 300);
+  }, 200);
 }
 
 function next() {
@@ -204,14 +191,7 @@ function prev() {
   mostrar();
 }
 
-function irA(i) {
-  index = i;
-  mostrar();
-}
-
-/* AUTO */
 setInterval(next, 4000);
-
 mostrar();
 
 </script>
