@@ -1,82 +1,65 @@
-/* ===== DIA 1 - ESTILO AMARILLO PREMIUM ===== */
+<body class="dia1-body">
 
-.dia1-body {
-  background: linear-gradient(135deg, #fff8cc, #ffe066);
-  font-family: 'Poppins', sans-serif;
+<div class="dia-container">
+
+  <!-- GALERIA -->
+  <div class="galeria">
+    <button class="btn left" onclick="prev()">❮</button>
+    <img id="imgDia" src="img/dia1-1.jpg">
+    <button class="btn right" onclick="next()">❯</button>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="contenido">
+    <h1 class="titulo-dia">🌞 Día 1</h1>
+
+    <div class="bloque">
+      <h3>🔍 Observo</h3>
+      <p>Se analizó el entorno del aula y la interacción entre docente y estudiantes.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>🤝 Participo</h3>
+      <p>Se apoyó en actividades básicas fortaleciendo la conexión con los niños.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>💡 Aprendo</h3>
+      <p>Se comprendió la importancia del ambiente en el aprendizaje infantil.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+let imagenes = [
+  "img/dia1-1.jpg",
+  "img/dia1-2.jpg",
+  "img/dia1-3.jpg",
+  "img/dia1-4.jpg",
+  "img/dia1-5.jpg",
+  "img/dia1-6.jpg",
+  "img/dia1-7.jpg",
+  "img/dia1-8.jpg",
+  "img/dia1-9.jpg"
+];
+
+let index = 0;
+
+function showImage() {
+  document.getElementById("imgDia").src = imagenes[index];
 }
 
-/* CONTENEDOR PRINCIPAL */
-.dia-container {
-  max-width: 1200px;
-  margin: 50px auto;
-  background: #ffffff;
-  border-radius: 25px;
-  display: flex;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+function next() {
+  index = (index + 1) % imagenes.length;
+  showImage();
 }
 
-/* GALERÍA IZQUIERDA */
-.galeria {
-  width: 55%;
-  position: relative;
+function prev() {
+  index = (index - 1 + imagenes.length) % imagenes.length;
+  showImage();
 }
+</script>
 
-.galeria img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* TEXTO DERECHO */
-.contenido {
-  width: 45%;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* TITULO */
-.titulo-dia {
-  font-size: 35px;
-  color: #ffb703;
-  margin-bottom: 20px;
-}
-
-/* BLOQUES */
-.bloque {
-  margin-bottom: 20px;
-}
-
-.bloque h3 {
-  margin: 0;
-  color: #333;
-}
-
-.bloque p {
-  margin: 5px 0 0;
-  color: #666;
-}
-
-/* EFECTO PREMIUM */
-.dia-container:hover {
-  transform: scale(1.01);
-  transition: 0.4s;
-}
-
-/* SLIDER BOTONES */
-.btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.8);
-  border: none;
-  font-size: 20px;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.btn.left { left: 10px; }
-.btn.right { right: 10px; }
+</body>
