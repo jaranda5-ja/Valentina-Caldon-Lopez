@@ -24,7 +24,7 @@ body {
 /* HEADER */
 header {
   text-align: center;
-  padding: 80px 20px 40px;
+  padding: 70px 20px 20px;
   color: white;
 }
 
@@ -34,66 +34,79 @@ header h1 {
   text-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-header p {
-  font-size: 18px;
+/* CONTENEDOR */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
 }
 
 /* TARJETA */
 .card {
-  max-width: 750px;
-  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 25px;
   background: rgba(255,255,255,0.9);
   backdrop-filter: blur(12px);
   border-radius: 25px;
-  padding: 30px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  padding: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
   animation: aparecer 1s ease;
 }
 
 @keyframes aparecer {
-  from {opacity: 0; transform: translateY(30px);}
+  from {opacity: 0; transform: translateY(40px);}
   to {opacity: 1; transform: translateY(0);}
 }
 
-/* TITULOS */
-h2 {
-  margin-top: 20px;
+/* TEXTO */
+.texto h2 {
   color: #ff4d6d;
   border-left: 5px solid #ff4d6d;
   padding-left: 10px;
+  margin-top: 15px;
 }
 
-/* TEXTO */
-p {
+.texto p {
   color: #333;
   line-height: 1.6;
 }
 
-/* GALERÍA */
-.galeria {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.imagen {
+/* IMÁGENES */
+.imagen-principal {
   width: 100%;
-  border-radius: 15px;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
   transition: 0.3s;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
 
-.imagen:hover {
+.imagen-principal:hover {
+  transform: scale(1.03);
+}
+
+.galeria {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.galeria img {
+  width: 50%;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.galeria img:hover {
   transform: scale(1.05);
 }
 
 /* BOTÓN */
 .boton {
-  display: block;
-  text-align: center;
-  margin-top: 25px;
-  padding: 12px;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
   border-radius: 12px;
   background: linear-gradient(135deg, #ff4d6d, #ff758f);
   color: white;
@@ -105,6 +118,13 @@ p {
 .boton:hover {
   transform: scale(1.1);
 }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 
@@ -112,39 +132,48 @@ p {
 
 <header>
   <h1>🎨 Día 1</h1>
-  <p>Primer acercamiento a la práctica pedagógica</p>
 </header>
 
-<div class="card">
+<div class="container">
+  <div class="card">
 
-  <h2>👀 Observación</h2>
-  <p>
-    En este primer día se realizó un reconocimiento del entorno educativo,
-    observando la dinámica del aula, la interacción entre los niños y el rol del docente.
-    Se identificó un ambiente participativo donde el aprendizaje se construye mediante la exploración.
-  </p>
+    <!-- 🖼 IMAGEN PRINCIPAL -->
+    <div>
+      <img src="img/dia1-1.jpg" class="imagen-principal">
 
-  <!-- 📸 DOS IMÁGENES -->
-  <div class="galeria">
-    <img src="img/dia1-1.jpg" class="imagen">
-    <img src="img/dia1-2.jpg" class="imagen">
+      <div class="galeria">
+        <img src="img/dia1-1.jpg">
+        <img src="img/dia1-2.jpg">
+      </div>
+    </div>
+
+    <!-- 🧠 TEXTO -->
+    <div class="texto">
+
+      <h2>👀 Observación</h2>
+      <p>
+        Se realizó un reconocimiento del entorno educativo,
+        observando la interacción en el aula y el comportamiento de los niños
+        dentro de un ambiente participativo.
+      </p>
+
+      <h2>💭 Reflexión</h2>
+      <p>
+        El aula representa un espacio donde no solo se transmite conocimiento,
+        sino también emociones, confianza y motivación.
+      </p>
+
+      <h2>🚀 Aprendizaje</h2>
+      <p>
+        La observación permite comprender mejor el contexto antes de intervenir,
+        facilitando estrategias pedagógicas más efectivas.
+      </p>
+
+      <a href="index.html" class="boton">⬅ Volver</a>
+
+    </div>
+
   </div>
-
-  <h2>💭 Reflexión</h2>
-  <p>
-    La experiencia permitió comprender que el aula no solo es un espacio físico,
-    sino un entorno donde influyen las emociones, la motivación y la confianza.
-    El docente cumple un papel clave como guía del proceso formativo.
-  </p>
-
-  <h2>🚀 Aprendizaje</h2>
-  <p>
-    Este día dejó como aprendizaje la importancia de observar antes de intervenir,
-    entendiendo las necesidades del grupo para generar estrategias pedagógicas efectivas.
-  </p>
-
-  <a href="index.html" class="boton">⬅ Volver al inicio</a>
-
 </div>
 
 </body>
