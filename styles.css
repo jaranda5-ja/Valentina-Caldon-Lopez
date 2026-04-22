@@ -210,41 +210,85 @@ h2::after {
   transform: scale(1.4);
 }
 
-/* ========================= */
-/* 🎨 ESTILOS POR DÍA */
-/* ========================= */
+/* ===== DIA 1 - ESTILO AMARILLO PREMIUM ===== */
 
-/* 🌞 DÍA 1 */
-.dia1 {
-  background: linear-gradient(135deg, #fceabb, #f8b500, #ff7b00);
+.dia1-body {
+  background: linear-gradient(135deg, #fff8cc, #ffe066);
+  font-family: 'Poppins', sans-serif;
 }
-.dia1 h2 { border-color: #ff006e; color: #ff006e; }
-.dia1 .card { background: #ff006e; }
 
-/* 🌿 DÍA 2 */
-.dia2 {
-  background: linear-gradient(135deg, #d4fc79, #52b788);
+/* CONTENEDOR PRINCIPAL */
+.dia-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  background: #ffffff;
+  border-radius: 25px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
-.dia2 h2 { border-color: #2d6a4f; color: #2d6a4f; }
-.dia2 .card { background: #2d6a4f; }
 
-/* 🌊 DÍA 3 */
-.dia3 {
-  background: linear-gradient(135deg, #4895ef, #4cc9f0);
+/* GALERÍA IZQUIERDA */
+.galeria {
+  width: 55%;
+  position: relative;
 }
-.dia3 h2 { border-color: #023e8a; color: #023e8a; }
-.dia3 .card { background: #023e8a; }
 
-/* 🌸 DÍA 4 */
-.dia4 {
-  background: linear-gradient(135deg, #ffafcc, #bde0fe);
+.galeria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.dia4 h2 { border-color: #c9184a; color: #c9184a; }
-.dia4 .card { background: #c9184a; }
 
-/* 🔥 DÍA 5 */
-.dia5 {
-  background: linear-gradient(135deg, #f72585, #ff8500);
+/* TEXTO DERECHO */
+.contenido {
+  width: 45%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.dia5 h2 { border-color: #9d0208; color: #9d0208; }
-.dia5 .card { background: #9d0208; }
+
+/* TITULO */
+.titulo-dia {
+  font-size: 35px;
+  color: #ffb703;
+  margin-bottom: 20px;
+}
+
+/* BLOQUES */
+.bloque {
+  margin-bottom: 20px;
+}
+
+.bloque h3 {
+  margin: 0;
+  color: #333;
+}
+
+.bloque p {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+/* EFECTO PREMIUM */
+.dia-container:hover {
+  transform: scale(1.01);
+  transition: 0.4s;
+}
+
+/* SLIDER BOTONES */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.btn.left { left: 10px; }
+.btn.right { right: 10px; }
