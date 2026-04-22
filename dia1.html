@@ -15,20 +15,23 @@ body {
   animation: fondo 12s ease infinite;
 }
 
+/* ANIMACIÓN FONDO */
 @keyframes fondo {
   0% {background-position: 0% 50%;}
   50% {background-position: 100% 50%;}
   100% {background-position: 0% 50%;}
 }
 
+/* HEADER MÁS PRO */
 header {
   text-align: center;
-  padding: 60px;
+  padding: 40px 20px 10px;
   color: white;
 }
 
 header h1 {
-  font-size: 50px;
+  font-size: 45px;
+  margin-bottom: 0;
 }
 
 /* CONTENEDOR */
@@ -38,55 +41,62 @@ header h1 {
   padding: 20px;
 }
 
-/* TARJETA */
+/* TARJETA PREMIUM */
 .card {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(15px);
   border-radius: 25px;
   padding: 25px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  transition: 0.4s;
 }
 
-/* IMAGEN CONTENEDOR FIJO */
+.card:hover {
+  transform: scale(1.01);
+}
+
+/* SLIDER */
 .slider {
   position: relative;
   width: 100%;
-  height: 400px; /* 🔥 tamaño fijo */
+  height: 400px;
   overflow: hidden;
   border-radius: 20px;
 }
 
-/* TODAS LAS IMÁGENES IGUALES */
+/* IMÁGENES */
 .slider img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 🔥 clave para que todas se vean iguales */
+  object-fit: cover;
   border-radius: 20px;
-  transition: opacity 0.5s ease;
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
 }
 
-/* BOTONES */
+/* BOTONES PREMIUM */
 .controls {
-  margin-top: 10px;
+  margin-top: 15px;
   text-align: center;
 }
 
 button {
-  padding: 8px 12px;
+  padding: 10px 14px;
   margin: 5px;
   border: none;
-  border-radius: 10px;
-  background: #ff4d6d;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #ff4d6d, #ff758f);
   color: white;
   cursor: pointer;
+  font-size: 16px;
   transition: 0.3s;
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 /* TEXTO */
@@ -107,15 +117,20 @@ button:hover {
   line-height: 1.6;
 }
 
-/* BOTÓN */
+/* BOTÓN VOLVER */
 .boton {
   margin-top: 20px;
-  padding: 10px;
+  padding: 12px;
   text-align: center;
   background: linear-gradient(135deg, #ff4d6d, #ff758f);
   color: white;
   border-radius: 12px;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  transform: scale(1.05);
 }
 
 /* RESPONSIVE */
@@ -134,13 +149,13 @@ button:hover {
 <body>
 
 <header>
-  <h1>🎨 Día 1</h1>
+  <h1>🌞 Día 1</h1>
 </header>
 
 <div class="container">
   <div class="card">
 
-    <!-- 🖼 SLIDER -->
+    <!-- SLIDER -->
     <div>
       <div class="slider">
         <img id="imagen" src="img/dia1-1.jpg">
@@ -152,24 +167,24 @@ button:hover {
       </div>
     </div>
 
-    <!-- 🧠 TEXTO FIJO -->
+    <!-- TEXTO -->
     <div class="texto">
       <h2>👀 Observación y experiencia</h2>
+
       <p>
         En este primer día se realizó un reconocimiento del entorno educativo,
         permitiendo observar la dinámica del aula, la interacción entre los niños
-        y el rol del docente dentro del proceso formativo.
+        y el rol del docente.
       </p>
 
       <p>
-        Esta experiencia permitió comprender que el aprendizaje no solo depende
-        de los contenidos, sino también del ambiente, la motivación y la forma en
-        que se guía a los estudiantes.
+        Se comprendió que el aprendizaje depende no solo de los contenidos,
+        sino del ambiente, la motivación y la forma en que se guía a los estudiantes.
       </p>
 
       <p>
-        Se destaca la importancia de observar antes de intervenir, entendiendo
-        las necesidades del grupo para fortalecer estrategias pedagógicas efectivas.
+        La observación permitió identificar necesidades y fortalecer estrategias
+        pedagógicas más efectivas.
       </p>
 
       <a href="index.html" class="boton">⬅ Volver</a>
@@ -181,20 +196,23 @@ button:hover {
 <script>
 let index = 0;
 
+/* 🔥 SOLO IMÁGENES DEL DÍA 1 */
 const imagenes = [
   "img/dia1-1.jpg",
   "img/dia1-2.jpg",
   "img/dia1-3.jpg",
   "img/dia1-4.jpg",
-  "img/dia1-5.jpg",
-  "img/dia1-6.jpg",
-  "img/dia1-7.jpg",
-  "img/dia1-8.jpg",
-  "img/dia1-9.jpg"
+  "img/dia1-5.jpg"
 ];
 
 function mostrar() {
-  document.getElementById("imagen").src = imagenes[index];
+  const img = document.getElementById("imagen");
+  img.style.opacity = 0;
+
+  setTimeout(() => {
+    img.src = imagenes[index];
+    img.style.opacity = 1;
+  }, 300);
 }
 
 function next() {
@@ -210,4 +228,3 @@ function prev() {
 
 </body>
 </html>
-
