@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -13,7 +13,6 @@ body {
   background: linear-gradient(270deg, #ffecd2, #fcb69f, #ffdde1, #f8b500);
   background-size: 600% 600%;
   animation: fondo 12s ease infinite;
-  overflow-x: hidden;
 }
 
 @keyframes fondo {
@@ -22,23 +21,7 @@ body {
   100% {background-position: 0% 50%;}
 }
 
-/* ✨ PARTÍCULAS */
-.particulas span {
-  position: absolute;
-  bottom: -50px;
-  width: 15px;
-  height: 15px;
-  background: rgba(255,255,255,0.4);
-  border-radius: 50%;
-  animation: subir 10s linear infinite;
-}
-
-@keyframes subir {
-  0% {transform: translateY(0);}
-  100% {transform: translateY(-100vh);}
-}
-
-/* 🌟 HEADER */
+/* HEADER */
 header {
   text-align: center;
   padding: 80px 20px 40px;
@@ -53,14 +36,13 @@ header h1 {
 
 header p {
   font-size: 18px;
-  opacity: 0.9;
 }
 
-/* 💌 TARJETA */
+/* TARJETA */
 .card {
-  max-width: 600px;
+  max-width: 750px;
   margin: auto;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.9);
   backdrop-filter: blur(12px);
   border-radius: 25px;
   padding: 30px;
@@ -73,37 +55,44 @@ header p {
   to {opacity: 1; transform: translateY(0);}
 }
 
-/* ✨ BLOQUES */
-.bloque {
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: 15px;
-  color: white;
-  font-weight: 500;
+/* TITULOS */
+h2 {
+  margin-top: 20px;
+  color: #ff4d6d;
+  border-left: 5px solid #ff4d6d;
+  padding-left: 10px;
 }
 
-.obs { background: linear-gradient(135deg, #ff758f, #ff4d6d); }
-.ref { background: linear-gradient(135deg, #ffd166, #fca311); }
-.apr { background: linear-gradient(135deg, #06d6a0, #1b9aaa); }
+/* TEXTO */
+p {
+  color: #333;
+  line-height: 1.6;
+}
 
-/* 🖼 IMAGEN */
+/* GALERÍA */
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 20px 0;
+}
+
 .imagen {
   width: 100%;
   border-radius: 15px;
-  margin: 20px 0;
   transition: 0.3s;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
 
 .imagen:hover {
   transform: scale(1.05);
 }
 
-/* 🔙 BOTÓN */
+/* BOTÓN */
 .boton {
   display: block;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 25px;
   padding: 12px;
   border-radius: 12px;
   background: linear-gradient(135deg, #ff4d6d, #ff758f);
@@ -121,39 +110,40 @@ header p {
 
 <body>
 
-<!-- ✨ EFECTO -->
-<div class="particulas">
-  <span style="left:10%; animation-duration:8s;"></span>
-  <span style="left:30%; animation-duration:12s;"></span>
-  <span style="left:50%; animation-duration:10s;"></span>
-  <span style="left:70%; animation-duration:7s;"></span>
-  <span style="left:90%; animation-duration:9s;"></span>
-</div>
-
-<!-- 🌟 HEADER -->
 <header>
   <h1>🎨 Día 1</h1>
-  <p>Primer acercamiento</p>
+  <p>Primer acercamiento a la práctica pedagógica</p>
 </header>
 
-<!-- 💌 CONTENIDO -->
 <div class="card">
 
-  <div class="bloque obs">
-    👀 Primer contacto con el entorno educativo
+  <h2>👀 Observación</h2>
+  <p>
+    En este primer día se realizó un reconocimiento del entorno educativo,
+    observando la dinámica del aula, la interacción entre los niños y el rol del docente.
+    Se identificó un ambiente participativo donde el aprendizaje se construye mediante la exploración.
+  </p>
+
+  <!-- 📸 DOS IMÁGENES -->
+  <div class="galeria">
+    <img src="img/dia1-1.jpg" class="imagen">
+    <img src="img/dia1-2.jpg" class="imagen">
   </div>
 
-  <img src="img/dia1-1.jpg" class="imagen">
+  <h2>💭 Reflexión</h2>
+  <p>
+    La experiencia permitió comprender que el aula no solo es un espacio físico,
+    sino un entorno donde influyen las emociones, la motivación y la confianza.
+    El docente cumple un papel clave como guía del proceso formativo.
+  </p>
 
-  <div class="bloque ref">
-    💭 Un espacio donde aprender también es sentir
-  </div>
+  <h2>🚀 Aprendizaje</h2>
+  <p>
+    Este día dejó como aprendizaje la importancia de observar antes de intervenir,
+    entendiendo las necesidades del grupo para generar estrategias pedagógicas efectivas.
+  </p>
 
-  <div class="bloque apr">
-    🚀 Cada detalle enseña, incluso lo más simple
-  </div>
-
-  <a href="index.html" class="boton">Volver ✨</a>
+  <a href="index.html" class="boton">⬅ Volver al inicio</a>
 
 </div>
 
