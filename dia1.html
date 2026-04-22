@@ -1,145 +1,161 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Día 1</title>
+<meta charset="UTF-8">
+<title>Día 1</title>
 
-  <!-- FUENTE PRO -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(270deg, #fceabb, #f8b500, #ffdde1);
-      background-size: 600% 600%;
-      animation: fondo 10s ease infinite;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(270deg, #ffecd2, #fcb69f, #ffdde1, #f8b500);
+  background-size: 600% 600%;
+  animation: fondo 12s ease infinite;
+  overflow-x: hidden;
+}
 
-    @keyframes fondo {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
+@keyframes fondo {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
 
-    /* HEADER */
-    header {
-      text-align: center;
-      padding: 80px 20px;
-      color: white;
-    }
+/* ✨ PARTÍCULAS */
+.particulas span {
+  position: absolute;
+  bottom: -50px;
+  width: 15px;
+  height: 15px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  animation: subir 10s linear infinite;
+}
 
-    header h1 {
-      font-size: 50px;
-      margin: 0;
-      text-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
+@keyframes subir {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-100vh);}
+}
 
-    header p {
-      font-size: 20px;
-      opacity: 0.9;
-    }
+/* 🌟 HEADER */
+header {
+  text-align: center;
+  padding: 80px 20px 40px;
+  color: white;
+}
 
-    /* TARJETA PRINCIPAL */
-    section {
-      margin: 30px;
-      padding: 30px;
-      border-radius: 25px;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      animation: aparecer 1s ease;
-    }
+header h1 {
+  font-size: 55px;
+  margin: 0;
+  text-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
 
-    @keyframes aparecer {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
+header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
 
-    /* TITULOS */
-    h2 {
-      border-left: 6px solid #ff4d6d;
-      padding-left: 10px;
-      color: #ff4d6d;
-    }
+/* 💌 TARJETA */
+.card {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  animation: aparecer 1s ease;
+}
 
-    /* TEXTO */
-    p {
-      font-size: 17px;
-      line-height: 1.6;
-      color: #333;
-    }
+@keyframes aparecer {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
 
-    /* IMAGEN */
-    .imagen {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 15px;
-      display: block;
-      margin: 20px auto;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-      transition: 0.3s;
-    }
+/* ✨ BLOQUES */
+.bloque {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  color: white;
+  font-weight: 500;
+}
 
-    .imagen:hover {
-      transform: scale(1.05);
-    }
+.obs { background: linear-gradient(135deg, #ff758f, #ff4d6d); }
+.ref { background: linear-gradient(135deg, #ffd166, #fca311); }
+.apr { background: linear-gradient(135deg, #06d6a0, #1b9aaa); }
 
-    /* BOTÓN */
-    .boton {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: linear-gradient(135deg, #ff4d6d, #ff758f);
-      color: white;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+/* 🖼 IMAGEN */
+.imagen {
+  width: 100%;
+  border-radius: 15px;
+  margin: 20px 0;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
 
-    .boton:hover {
-      transform: scale(1.1);
-    }
+.imagen:hover {
+  transform: scale(1.05);
+}
 
-  </style>
+/* 🔙 BOTÓN */
+.boton {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  transform: scale(1.1);
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>🎨 Día 1</h1>
-    <p>Primer acercamiento a la práctica pedagógica</p>
-  </header>
+<!-- ✨ EFECTO -->
+<div class="particulas">
+  <span style="left:10%; animation-duration:8s;"></span>
+  <span style="left:30%; animation-duration:12s;"></span>
+  <span style="left:50%; animation-duration:10s;"></span>
+  <span style="left:70%; animation-duration:7s;"></span>
+  <span style="left:90%; animation-duration:9s;"></span>
+</div>
 
-  <!-- CONTENIDO -->
-  <section>
+<!-- 🌟 HEADER -->
+<header>
+  <h1>🎨 Día 1</h1>
+  <p>Primer acercamiento</p>
+</header>
 
-    <h2>🧠 Observación</h2>
-    <p>
-      Durante este primer día se realizó una observación general del entorno educativo,
-      identificando la dinámica del aula, la interacción entre docentes y estudiantes,
-      y el ambiente de aprendizaje.
-    </p>
+<!-- 💌 CONTENIDO -->
+<div class="card">
 
-    <img src="img/dia1-1.jpg" class="imagen">
+  <div class="bloque obs">
+    👀 Primer contacto con el entorno educativo
+  </div>
 
-    <h2>💡 Reflexión</h2>
-    <p>
-      Se evidenció la importancia de generar espacios seguros y motivadores para los niños,
-      donde el aprendizaje se construya a través de la exploración y la participación activa.
-    </p>
+  <img src="img/dia1-1.jpg" class="imagen">
 
-    <h2>🚀 Aprendizaje</h2>
-    <p>
-      Este día permitió comprender el rol del docente como guía del proceso educativo,
-      destacando la necesidad de planificar actividades significativas.
-    </p>
+  <div class="bloque ref">
+    💭 Un espacio donde aprender también es sentir
+  </div>
 
-    <a href="index.html" class="boton">⬅ Volver al inicio</a>
+  <div class="bloque apr">
+    🚀 Cada detalle enseña, incluso lo más simple
+  </div>
 
-  </section>
+  <a href="index.html" class="boton">Volver ✨</a>
+
+</div>
 
 </body>
 </html>
