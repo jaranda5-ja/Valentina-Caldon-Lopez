@@ -1,200 +1,82 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Día 1</title>
+/* ===== DIA 1 - ESTILO AMARILLO PREMIUM ===== */
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-
-/* ========================= */
-/* 🔥 BASE LIMPIO */
-/* ========================= */
-body {
-  margin: 0;
+.dia1-body {
+  background: linear-gradient(135deg, #fff8cc, #ffe066);
   font-family: 'Poppins', sans-serif;
-  background: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
-/* ========================= */
-/* 💎 CONTENEDOR */
-/* ========================= */
-.container {
-  width: 1000px;
-  height: 550px;
-  background: white;
-  border-radius: 20px;
+/* CONTENEDOR PRINCIPAL */
+.dia-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  background: #ffffff;
+  border-radius: 25px;
   display: flex;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
-/* ========================= */
-/* 🎬 SLIDER (FIJO) */
-/* ========================= */
-.slider {
-  width: 50%;
-  height: 100%;
+/* GALERÍA IZQUIERDA */
+.galeria {
+  width: 55%;
+  position: relative;
 }
 
-.slider img {
+.galeria img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 🔥 CLAVE: todas iguales */
-  transition: opacity 0.5s ease;
+  object-fit: cover;
 }
 
-/* ========================= */
-/* 🧠 TEXTO */
-/* ========================= */
-.texto {
-  width: 50%;
+/* TEXTO DERECHO */
+.contenido {
+  width: 45%;
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.texto h1 {
+/* TITULO */
+.titulo-dia {
+  font-size: 35px;
+  color: #ffb703;
+  margin-bottom: 20px;
+}
+
+/* BLOQUES */
+.bloque {
+  margin-bottom: 20px;
+}
+
+.bloque h3 {
   margin: 0;
-  font-size: 30px;
-  color: #ff006e;
+  color: #333;
 }
 
-.texto p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-top: 15px;
+.bloque p {
+  margin: 5px 0 0;
+  color: #666;
 }
 
-/* ========================= */
-/* 🔘 CONTROLES LIMPIOS */
-/* ========================= */
-.controls {
+/* EFECTO PREMIUM */
+.dia-container:hover {
+  transform: scale(1.01);
+  transition: 0.4s;
+}
+
+/* SLIDER BOTONES */
+.btn {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-}
-
-.controls button {
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
   border: none;
-  background: rgba(0,0,0,0.5);
-  color: white;
-  padding: 6px 10px;
-  margin-right: 5px;
-  border-radius: 6px;
+  font-size: 20px;
+  padding: 10px;
   cursor: pointer;
-}
-
-/* DOTS */
-#dots {
-  margin-top: 8px;
-}
-
-#dots span {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background: #ccc;
   border-radius: 50%;
-  margin: 3px;
 }
 
-#dots span.active {
-  background: #ff006e;
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-  <!-- 🎬 IMÁGENES -->
-  <div class="slider">
-    <img id="img" src="img/dia1-1.jpg">
-
-    <div class="controls">
-      <button onclick="prev()">◀</button>
-      <button onclick="next()">▶</button>
-      <div id="dots"></div>
-    </div>
-  </div>
-
-  <!-- 🧠 TEXTO -->
-  <div class="texto">
-    <h1>Día 1</h1>
-    <p>
-      Este primer día marcó el inicio del proceso de práctica pedagógica, permitiendo una observación detallada del entorno educativo.
-      <br><br>
-      Se identificaron dinámicas de interacción, metodologías de enseñanza y el comportamiento de los estudiantes dentro del aula,
-      generando una comprensión inicial del contexto formativo.
-    </p>
-  </div>
-
-</div>
-
-<script>
-
-let index = 0;
-
-const imagenes = [
-  "img/dia1-1.jpg",
-  "img/dia1-2.jpg",
-  "img/dia1-3.jpg",
-  "img/dia1-4.jpg",
-  "img/dia1-5.jpg",
-  "img/dia1-6.jpg",
-  "img/dia1-7.jpg",
-  "img/dia1-8.jpg",
-  "img/dia1-9.jpg"
-];
-
-const img = document.getElementById("img");
-const dotsContainer = document.getElementById("dots");
-
-/* DOTS */
-imagenes.forEach((_, i) => {
-  const dot = document.createElement("span");
-  dotsContainer.appendChild(dot);
-});
-
-function actualizarDots() {
-  const dots = document.querySelectorAll("#dots span");
-  dots.forEach(d => d.classList.remove("active"));
-  dots[index].classList.add("active");
-}
-
-function mostrar() {
-  img.style.opacity = 0;
-
-  setTimeout(() => {
-    img.src = imagenes[index];
-    img.style.opacity = 1;
-    actualizarDots();
-  }, 200);
-}
-
-function next() {
-  index = (index + 1) % imagenes.length;
-  mostrar();
-}
-
-function prev() {
-  index = (index - 1 + imagenes.length) % imagenes.length;
-  mostrar();
-}
-
-setInterval(next, 4000);
-mostrar();
-
-</script>
-
-</body>
-</html>
+.btn.left { left: 10px; }
+.btn.right { right: 10px; }
