@@ -2,106 +2,241 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diario de Campo</title>
 
+<!-- FUENTES -->
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
+<style>
+
+/* ========================= */
+/* 🔥 BASE */
+/* ========================= */
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background: linear-gradient(135deg,#fdfbfb,#ebedee);
+overflow-x:hidden;
+}
+
+/* ========================= */
+/* 🎨 FONDO SUAVE DECORADO */
+/* ========================= */
+body::before{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+top:-150px;
+left:-150px;
+background:#ffe066;
+border-radius:50%;
+opacity:0.4;
+filter:blur(80px);
+}
+
+body::after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+bottom:-150px;
+right:-150px;
+background:#a8e6cf;
+border-radius:50%;
+opacity:0.4;
+filter:blur(80px);
+}
+
+/* ========================= */
+/* 🌈 TITULO */
+/* ========================= */
+.titulo{
+text-align:center;
+margin-top:80px;
+font-family:'Fredoka',sans-serif;
+font-size:70px;
+font-weight:700;
+}
+
+/* COLORES POR LETRA */
+.titulo span:nth-child(1){color:#ff6b6b;}
+.titulo span:nth-child(2){color:#feca57;}
+.titulo span:nth-child(3){color:#48dbfb;}
+.titulo span:nth-child(4){color:#1dd1a1;}
+.titulo span:nth-child(5){color:#ff9ff3;}
+.titulo span:nth-child(6){color:#54a0ff;}
+
+/* SUBTITULO */
+.sub{
+text-align:center;
+font-size:20px;
+color:#555;
+margin-top:10px;
+}
+
+/* FRASE */
+.frase{
+text-align:center;
+font-style:italic;
+margin:20px 0 50px;
+color:#777;
+}
+
+/* ========================= */
+/* 🎴 TARJETAS */
+/* ========================= */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+/* CARD */
+.card{
+background:white;
+border-radius:20px;
+padding:30px;
+text-align:center;
+text-decoration:none;
+color:#333;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+transition:0.3s;
+position:relative;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* ICONO */
+.icon{
+font-size:40px;
+margin-bottom:10px;
+}
+
+/* TITULO CARD */
+.card h3{
+margin:10px 0;
+}
+
+/* BOTON */
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:8px 15px;
+border-radius:10px;
+font-size:14px;
+color:white;
+}
+
+/* COLORES POR DIA */
+.d1 .btn{background:#ffb703;}
+.d2 .btn{background:#2ecc71;}
+.d3 .btn{background:#3a86ff;}
+.d4 .btn{background:#ff6b6b;}
+.d5 .btn{background:#ff8500;}
+
+/* ========================= */
+/* 📄 INFO FINAL */
+/* ========================= */
+.info{
+max-width:900px;
+margin:60px auto;
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.info h2{
+margin-bottom:10px;
+}
+
+.info p{
+color:#555;
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE */
+/* ========================= */
+@media(max-width:768px){
+
+.titulo{
+font-size:45px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<header class="nav">
-  <h2>📘 Diario</h2>
-  <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Días</a>
-    <a href="#">Reflexión</a>
-  </nav>
-</header>
+<!-- TITULO -->
+<h1 class="titulo">
+<span>D</span><span>i</span><span>a</span><span>r</span><span>i</span><span>o</span>
+</h1>
 
-<!-- HERO -->
-<section class="hero">
+<p class="sub">Diario de Campo - Educación Infantil</p>
 
-  <div class="nube"></div>
-  <div class="sol"></div>
+<div class="frase">
+“Educar no es llenar mentes, es encender posibilidades.”
+</div>
 
-  <h1 class="titulo">
-    <span>D</span><span>i</span><span>a</span><span>r</span><span>i</span><span>o</span>
-  </h1>
+<!-- TARJETAS -->
+<div class="grid">
 
-  <h2>de Campo</h2>
-  <p>Práctica Pedagógica Infantil</p>
+<a href="dia1.html" class="card d1">
+<div class="icon">🎨</div>
+<h3>Día 1</h3>
+<p>Observación inicial</p>
+<span class="btn">Ver día</span>
+</a>
 
-</section>
+<a href="dia2.html" class="card d2">
+<div class="icon">🌿</div>
+<h3>Día 2</h3>
+<p>Exploración y aprendizaje</p>
+<span class="btn">Ver día</span>
+</a>
 
-<!-- ONDA -->
-<div class="wave"></div>
+<a href="dia3.html" class="card d3">
+<div class="icon">🌊</div>
+<h3>Día 3</h3>
+<p>Interacción social</p>
+<span class="btn">Ver día</span>
+</a>
 
-<!-- SLIDER -->
-<section class="slider">
+<a href="dia4.html" class="card d4">
+<div class="icon">🌸</div>
+<h3>Día 4</h3>
+<p>Creatividad en el aula</p>
+<span class="btn">Ver día</span>
+</a>
 
-  <img id="slide" src="img/dia1-1.jpg">
+<a href="dia5.html" class="card d5">
+<div class="icon">⭐</div>
+<h3>Día 5</h3>
+<p>Reflexión final</p>
+<span class="btn">Ver día</span>
+</a>
 
-  <div class="dots">
-    <span onclick="go(0)"></span>
-    <span onclick="go(1)"></span>
-    <span onclick="go(2)"></span>
-  </div>
-
-</section>
-
-<!-- CARDS -->
-<section class="cards">
-
-  <a href="dia1.html" class="card c1">🎨 Día 1</a>
-  <a href="dia2.html" class="card c2">🌿 Día 2</a>
-  <a href="#" class="card c3">🌊 Día 3</a>
-  <a href="#" class="card c4">🌸 Día 4</a>
-  <a href="#" class="card c5">⭐ Día 5</a>
-
-</section>
+</div>
 
 <!-- INFO -->
-<section class="info">
-  <h3>Sobre el proyecto</h3>
-  <p>Experiencias pedagógicas basadas en observación, interacción y reflexión.</p>
-</section>
-
-<script>
-let imgs=[
-"img/dia1-1.jpg",
-"img/dia2-1.jpg",
-"img/dia1-2.jpg"
-];
-
-let i=0;
-
-function show(){
-document.getElementById("slide").src=imgs[i];
-updateDots();
-}
-
-function go(n){
-i=n;
-show();
-}
-
-function updateDots(){
-document.querySelectorAll(".dots span").forEach((d,index)=>{
-d.classList.toggle("active", index===i);
-});
-}
-
-setInterval(()=>{
-i=(i+1)%imgs.length;
-show();
-},4000);
-
-updateDots();
-</script>
+<div class="info">
+<h2>Sobre este proyecto</h2>
+<p>
+Este diario de campo presenta experiencias, observaciones y reflexiones
+durante la práctica pedagógica en educación infantil.
+</p>
+</div>
 
 </body>
 </html>
