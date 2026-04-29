@@ -4,225 +4,66 @@
 <meta charset="UTF-8">
 <title>Día 1</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(270deg, #ffecd2, #fcb69f, #ffdde1, #f8b500);
-  background-size: 600% 600%;
-  animation: fondo 12s ease infinite;
-}
-
-/* ANIMACIÓN FONDO */
-@keyframes fondo {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-/* HEADER MÁS PRO */
-header {
-  text-align: center;
-  padding: 40px 20px 10px;
-  color: white;
-}
-
-header h1 {
-  font-size: 45px;
-  margin-bottom: 0;
-}
-
-/* CONTENEDOR */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
-
-/* TARJETA PREMIUM */
-.card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(15px);
-  border-radius: 25px;
-  padding: 25px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-  transition: 0.4s;
-}
-
-.card:hover {
-  transform: scale(1.01);
-}
-
-/* SLIDER */
-.slider {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 20px;
-}
-
-/* IMÁGENES */
-.slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-  opacity: 1;
-  transition: opacity 0.6s ease-in-out;
-}
-
-/* BOTONES PREMIUM */
-.controls {
-  margin-top: 15px;
-  text-align: center;
-}
-
-button {
-  padding: 10px 14px;
-  margin: 5px;
-  border: none;
-  border-radius: 50px;
-  background: linear-gradient(135deg, #ff4d6d, #ff758f);
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.15);
-}
-
-/* TEXTO */
-.texto {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.texto h2 {
-  color: #ff4d6d;
-  border-left: 5px solid #ff4d6d;
-  padding-left: 10px;
-}
-
-.texto p {
-  color: #333;
-  line-height: 1.6;
-}
-
-/* BOTÓN VOLVER */
-.boton {
-  margin-top: 20px;
-  padding: 12px;
-  text-align: center;
-  background: linear-gradient(135deg, #ff4d6d, #ff758f);
-  color: white;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.boton:hover {
-  transform: scale(1.05);
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .card {
-    grid-template-columns: 1fr;
-  }
-
-  .slider {
-    height: 300px;
-  }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header>
-  <h1>🌞 Día 1</h1>
-</header>
-
 <div class="container">
-  <div class="card">
 
-    <!-- SLIDER -->
-    <div>
-      <div class="slider">
-        <img id="imagen" src="img/dia1-1.jpg">
-      </div>
+<!-- GALERIA -->
+<div class="galeria">
+<img id="img" src="img/dia1-1.jpg">
 
-      <div class="controls">
-        <button onclick="prev()">⬅</button>
-        <button onclick="next()">➡</button>
-      </div>
-    </div>
+<button class="btn left" onclick="prev()">❮</button>
+<button class="btn right" onclick="next()">❯</button>
+</div>
 
-    <!-- TEXTO -->
-    <div class="texto">
-      <h2>👀 Observación y experiencia</h2>
+<!-- TEXTO -->
+<div class="texto dia1">
 
-      <p>
-        En este primer día se realizó un reconocimiento del entorno educativo,
-        permitiendo observar la dinámica del aula, la interacción entre los niños
-        y el rol del docente.
-      </p>
+<h1>🎨 Día 1</h1>
 
-      <p>
-        Se comprendió que el aprendizaje depende no solo de los contenidos,
-        sino del ambiente, la motivación y la forma en que se guía a los estudiantes.
-      </p>
+<div class="box">
+<b>Observación:</b>
+<p>Primer acercamiento al entorno educativo y reconocimiento del aula.</p>
+</div>
 
-      <p>
-        La observación permitió identificar necesidades y fortalecer estrategias
-        pedagógicas más efectivas.
-      </p>
+<div class="box">
+<b>Interacción:</b>
+<p>Participación activa con los niños mediante actividades lúdicas.</p>
+</div>
 
-      <a href="index.html" class="boton">⬅ Volver</a>
-    </div>
+<div class="box">
+<b>Reflexión:</b>
+<p>El juego es la base fundamental del aprendizaje en la infancia.</p>
+</div>
 
-  </div>
+</div>
 </div>
 
 <script>
-let index = 0;
-
-/* 🔥 SOLO IMÁGENES DEL DÍA 1 */
-const imagenes = [
-  "img/dia1-1.jpg",
-  "img/dia1-2.jpg",
-  "img/dia1-3.jpg",
-  "img/dia1-4.jpg",
-  "img/dia1-5.jpg"
+let imgs=[
+"img/dia1-1.jpg",
+"img/dia1-2.jpg",
+"img/dia1-3.jpg"
 ];
 
-function mostrar() {
-  const img = document.getElementById("imagen");
-  img.style.opacity = 0;
+let i=0;
 
-  setTimeout(() => {
-    img.src = imagenes[index];
-    img.style.opacity = 1;
-  }, 300);
+function show(){
+document.getElementById("img").src=imgs[i];
 }
 
-function next() {
-  index = (index + 1) % imagenes.length;
-  mostrar();
+function next(){
+i=(i+1)%imgs.length;
+show();
 }
 
-function prev() {
-  index = (index - 1 + imagenes.length) % imagenes.length;
-  mostrar();
+function prev(){
+i=(i-1+imgs.length)%imgs.length;
+show();
 }
 </script>
 
