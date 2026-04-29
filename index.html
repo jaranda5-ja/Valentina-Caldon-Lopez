@@ -8,10 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
-
-<!-- ANIMACIONES -->
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-
 </head>
 
 <body>
@@ -27,7 +23,7 @@
 </header>
 
 <!-- HERO -->
-<section class="hero" data-aos="fade-up">
+<section class="hero">
 
   <div class="nube"></div>
   <div class="sol"></div>
@@ -45,7 +41,8 @@
 <div class="wave"></div>
 
 <!-- SLIDER -->
-<section class="slider" data-aos="zoom-in">
+<section class="slider">
+
   <img id="slide" src="img/dia1-1.jpg">
 
   <div class="dots">
@@ -53,10 +50,11 @@
     <span onclick="go(1)"></span>
     <span onclick="go(2)"></span>
   </div>
+
 </section>
 
 <!-- CARDS -->
-<section class="cards" data-aos="fade-up">
+<section class="cards">
 
   <a href="dia1.html" class="card c1">🎨 Día 1</a>
   <a href="dia2.html" class="card c2">🌿 Día 2</a>
@@ -67,12 +65,11 @@
 </section>
 
 <!-- INFO -->
-<section class="info" data-aos="fade-up">
+<section class="info">
   <h3>Sobre el proyecto</h3>
   <p>Experiencias pedagógicas basadas en observación, interacción y reflexión.</p>
 </section>
 
-<!-- SCRIPT SLIDER -->
 <script>
 let imgs=[
 "img/dia1-1.jpg",
@@ -104,15 +101,6 @@ show();
 },4000);
 
 updateDots();
-</script>
-
-<!-- AOS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-AOS.init({
-duration:1000,
-once:true
-});
 </script>
 
 </body>
