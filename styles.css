@@ -207,3 +207,62 @@ max-width:650px;
 text-align:center;
 box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
+
+/* ========================= */
+/* 🔥 FIX PARA TUS TARJETAS */
+/* ========================= */
+
+/* grid → igual que cards */
+.grid{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+max-width:1000px;
+margin-top:30px;
+}
+
+/* tarjetas */
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+text-align:center;
+width:170px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+/* icono */
+.icon{
+font-size:40px;
+margin-bottom:10px;
+}
+
+/* 🎨 COLORES PASTEL COMO LA IMAGEN */
+.d1{background:#fff3cd;}
+.d2{background:#d4f8e8;}
+.d3{background:#d6eaff;}
+.d4{background:#ffd6e0;}
+.d5{background:#ffe5b4;}
+
+/* BOTONES BONITOS */
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:8px 15px;
+border-radius:10px;
+font-size:14px;
+color:white;
+}
+
+/* colores botones */
+.d1 .btn{background:#ffb703;}
+.d2 .btn{background:#2ecc71;}
+.d3 .btn{background:#3a86ff;}
+.d4 .btn{background:#ff6b6b;}
+.d5 .btn{background:#ff8500;}
