@@ -1,214 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Diario de Campo</title>
+<meta charset="UTF-8">
+<title>Diario de Campo</title>
 
-  <!-- 🎨 FUENTE -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    /* ========================= */
-    /* 🔥 BASE */
-    /* ========================= */
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      overflow-x: hidden;
-      color: white;
-      background: linear-gradient(270deg, #ff4d6d, #7209b7, #3a86ff, #00c9a7);
-      background-size: 800% 800%;
-      animation: fondo 15s ease infinite;
-    }
+/* ===== BASE ===== */
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background: linear-gradient(135deg,#ff4d6d,#7209b7,#3a86ff,#00c9a7);
+background-size:400% 400%;
+animation:fondo 12s ease infinite;
+color:white;
+}
 
-    @keyframes fondo {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
+@keyframes fondo{
+0%{background-position:0%}
+50%{background-position:100%}
+100%{background-position:0%}
+}
 
-    /* ========================= */
-    /* ✨ BURBUJAS */
-    /* ========================= */
-    .burbujas span {
-      position: absolute;
-      bottom: -60px;
-      width: 25px;
-      height: 25px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 50%;
-      animation: subir 12s linear infinite;
-      filter: blur(2px);
-    }
+/* ===== TITULO KIDS ===== */
+.titulo-kids{
+font-family:'Fredoka';
+font-size:60px;
+text-align:center;
+margin-top:80px;
+}
 
-    @keyframes subir {
-      0% {transform: translateY(0);}
-      100% {transform: translateY(-110vh);}
-    }
+.titulo-kids span:nth-child(1){color:#ff6b6b;}
+.titulo-kids span:nth-child(2){color:#feca57;}
+.titulo-kids span:nth-child(3){color:#48dbfb;}
+.titulo-kids span:nth-child(4){color:#1dd1a1;}
+.titulo-kids span:nth-child(5){color:#ff9ff3;}
+.titulo-kids span:nth-child(6){color:#54a0ff;}
 
-    /* ========================= */
-    /* 🌟 HERO */
-    /* ========================= */
-    header {
-      text-align: center;
-      padding: 120px 20px 60px;
-    }
+/* ===== SUB ===== */
+.sub{
+text-align:center;
+opacity:.9;
+margin-bottom:40px;
+}
 
-    header h1 {
-      font-size: 65px;
-      margin: 0;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      animation: fadeUp 1s ease;
-    }
+/* ===== CARDS ===== */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:40px;
+max-width:1100px;
+margin:auto;
+}
 
-    header p {
-      font-size: 22px;
-      opacity: 0.9;
-      margin-top: 10px;
-      animation: fadeUp 1.5s ease;
-    }
+.card{
+padding:50px 20px;
+border-radius:25px;
+text-align:center;
+text-decoration:none;
+color:white;
+font-weight:bold;
+font-size:22px;
+transition:.3s;
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
 
-    .frase {
-      text-align: center;
-      font-size: 20px;
-      font-style: italic;
-      opacity: 0.85;
-      margin-bottom: 40px;
-      animation: fadeUp 2s ease;
-    }
+.card:hover{
+transform:translateY(-10px) scale(1.05);
+}
 
-    @keyframes fadeUp {
-      from {opacity:0; transform: translateY(30px);}
-      to {opacity:1; transform: translateY(0);}
-    }
+.d1{background:linear-gradient(135deg,#ffd60a,#ffb703);}
+.d2{background:linear-gradient(135deg,#2ecc71,#52b788);}
+.d3{background:linear-gradient(135deg,#3a86ff,#4cc9f0);}
+.d4{background:linear-gradient(135deg,#ff6b6b,#ff8fab);}
+.d5{background:linear-gradient(135deg,#ff8500,#ffb703);}
 
-    /* ========================= */
-    /* 🎴 TARJETAS */
-    /* ========================= */
-    .contenedor {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 30px;
-      padding: 30px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .dia {
-      padding: 50px 20px;
-      border-radius: 25px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      text-decoration: none;
-      color: white;
-      transition: 0.4s ease;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* 💎 EFECTO LUZ */
-    .dia::before {
-      content: "";
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -100%;
-      left: -100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
-      transform: rotate(25deg);
-      transition: 0.6s;
-    }
-
-    .dia:hover::before {
-      top: 100%;
-      left: 100%;
-    }
-
-    .dia:hover {
-      transform: translateY(-10px) scale(1.05);
-    }
-
-    /* 🎨 COLORES */
-    .d1 { background: linear-gradient(135deg, #ff006e, #ff4d6d); }
-    .d2 { background: linear-gradient(135deg, #2d6a4f, #52b788); }
-    .d3 { background: linear-gradient(135deg, #023e8a, #4cc9f0); }
-    .d4 { background: linear-gradient(135deg, #c9184a, #ffafcc); }
-    .d5 { background: linear-gradient(135deg, #9d0208, #ff8500); }
-
-    /* ========================= */
-    /* 📄 INFO FINAL */
-    /* ========================= */
-    .info {
-      margin: 60px auto;
-      padding: 40px;
-      border-radius: 30px;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(15px);
-      text-align: center;
-      max-width: 900px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    }
-
-    .info h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .info p {
-      font-size: 18px;
-      opacity: 0.9;
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- ✨ BURBUJAS -->
-  <div class="burbujas">
-    <span style="left:10%; animation-duration:10s;"></span>
-    <span style="left:25%; animation-duration:14s;"></span>
-    <span style="left:40%; animation-duration:9s;"></span>
-    <span style="left:55%; animation-duration:12s;"></span>
-    <span style="left:70%; animation-duration:8s;"></span>
-    <span style="left:85%; animation-duration:11s;"></span>
-  </div>
+<h1 class="titulo-kids">
+<span>D</span><span>i</span><span>a</span><span>r</span><span>i</span><span>o</span>
+</h1>
 
-  <!-- 🌟 HERO -->
-  <header>
-    <h1>Diario de Campo 📚</h1>
-    <p>Práctica Pedagógica en Educación Infantil</p>
-  </header>
+<p class="sub">Diario de Campo - Práctica Infantil</p>
 
-  <!-- 💬 FRASE -->
-  <div class="frase">
-    “Educar no es llenar mentes, es encender posibilidades.”
-  </div>
-
-  <!-- 📅 DÍAS -->
-  <div class="contenedor">
-    <a href="dia1.html" class="dia d1">🎨 Día 1</a>
-    <a href="dia2.html" class="dia d2">🌿 Día 2</a>
-    <a href="dia3.html" class="dia d3">🌊 Día 3</a>
-    <a href="dia4.html" class="dia d4">🌸 Día 4</a>
-    <a href="dia5.html" class="dia d5">🔥 Día 5</a>
-  </div>
-
-  <!-- 👩‍🏫 INFO -->
-  <div class="info">
-    <h2>Sobre este proyecto</h2>
-    <p>
-      Este diario de campo presenta experiencias, observaciones y reflexiones
-      desarrolladas durante la práctica pedagógica en educación infantil,
-      evidenciando el proceso formativo y la construcción del conocimiento.
-    </p>
-  </div>
+<div class="grid">
+<a href="dia1.html" class="card d1">🎨 Día 1</a>
+<a href="dia2.html" class="card d2">🌿 Día 2</a>
+<a href="dia3.html" class="card d3">🌊 Día 3</a>
+<a href="dia4.html" class="card d4">🌸 Día 4</a>
+<a href="dia5.html" class="card d5">🔥 Día 5</a>
+</div>
 
 </body>
 </html>
