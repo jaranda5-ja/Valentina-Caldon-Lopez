@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diario de Campo</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
@@ -11,7 +12,7 @@
 
 <body>
 
-<!-- 🌈 NAV -->
+<!-- NAV -->
 <header class="nav">
   <h2>📘 Diario</h2>
   <nav>
@@ -21,13 +22,11 @@
   </nav>
 </header>
 
-<!-- ☁️ HERO -->
+<!-- HERO -->
 <section class="hero">
 
-  <!-- ILUSTRACIONES -->
   <div class="nube"></div>
   <div class="sol"></div>
-  <div class="arcoiris"></div>
 
   <h1 class="titulo">
     <span>D</span><span>i</span><span>a</span><span>r</span><span>i</span><span>o</span>
@@ -38,10 +37,10 @@
 
 </section>
 
-<!-- 🌊 ONDA -->
+<!-- ONDA -->
 <div class="wave"></div>
 
-<!-- 🎬 SLIDER -->
+<!-- SLIDER -->
 <section class="slider">
 
   <img id="slide" src="img/dia1-1.jpg">
@@ -54,7 +53,7 @@
 
 </section>
 
-<!-- 🎴 CARDS -->
+<!-- CARDS -->
 <section class="cards">
 
   <a href="dia1.html" class="card c1">🎨 Día 1</a>
@@ -65,7 +64,7 @@
 
 </section>
 
-<!-- 📦 INFO -->
+<!-- INFO -->
 <section class="info">
   <h3>Sobre el proyecto</h3>
   <p>Experiencias pedagógicas basadas en observación, interacción y reflexión.</p>
@@ -82,7 +81,7 @@ let i=0;
 
 function show(){
 document.getElementById("slide").src=imgs[i];
-dots();
+updateDots();
 }
 
 function go(n){
@@ -90,7 +89,7 @@ i=n;
 show();
 }
 
-function dots(){
+function updateDots(){
 document.querySelectorAll(".dots span").forEach((d,index)=>{
 d.classList.toggle("active", index===i);
 });
@@ -101,7 +100,7 @@ i=(i+1)%imgs.length;
 show();
 },4000);
 
-dots();
+updateDots();
 </script>
 
 </body>
