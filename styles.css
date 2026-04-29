@@ -32,13 +32,20 @@ font-weight:500;
 color:#ff6b6b;
 }
 
-/* 🔥 FONDO PRO */
+/* HERO 🔥 (AQUI ESTABA TU ERROR) */
+.hero{
+text-align:center;
+padding:100px 20px 60px;
+max-width:900px;
+position:relative;
+
 background:linear-gradient(180deg,#eef7ff 0%, #fdfdfd 100%);
 border-radius:30px;
 box-shadow:0 20px 60px rgba(0,0,0,.08);
 overflow:hidden;
 }
 
+/* TITULO */
 .titulo{
 font-family:Fredoka;
 font-size:70px;
@@ -85,6 +92,11 @@ animation:pulse 4s infinite ease-in-out;
 @keyframes pulse{
 0%,100%{transform:scale(1);}
 50%{transform:scale(1.08);}
+}
+
+@keyframes flotar{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
 }
 
 /* ONDA */
