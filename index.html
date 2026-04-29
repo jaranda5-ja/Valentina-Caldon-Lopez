@@ -1,120 +1,69 @@
-body{
-margin:0;
-font-family:'Poppins', sans-serif;
-background: linear-gradient(135deg,#f3f0ff,#fff6fb,#f0fff8);
-display:flex;
-flex-direction:column;
-align-items:center;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Diario</title>
 
-/* HERO */
-.hero{
-text-align:center;
-padding:80px 20px 40px;
-position:relative;
-}
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-/* TITULO */
-.titulo{
-font-family:'Fredoka', cursive;
-font-size:100px;
-font-weight:700;
-font-style:italic;
-margin:0;
+</head>
 
-background: linear-gradient(90deg,#ff6b6b,#feca57,#48dbfb,#1dd1a1,#ff9ff3,#54a0ff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
+<body>
 
-/* SUB */
-.sub{
-font-size:28px;
-color:#6c5ce7;
-margin-top:10px;
-}
+<!-- HERO -->
+<section class="hero">
 
-/* FRASE */
-.frase{
-margin:25px 0 50px;
-color:#b8a1d9;
-font-size:22px;
-font-style:italic;
-}
+<h1 class="titulo">Diario</h1>
 
-/* DECORACION */
-.nube{
-position:absolute;
-top:20px;
-left:10%;
-width:100px;
-height:50px;
-background:#fff;
-border-radius:50px;
-box-shadow:25px 0 #fff,50px 0 #fff;
-opacity:.7;
-}
+<h2 class="sub">Diario de Campo - Educación Infantil</h2>
 
-.sol{
-position:absolute;
-top:20px;
-right:10%;
-width:60px;
-height:60px;
-background:#ffeaa7;
-border-radius:50%;
-box-shadow:0 0 30px #ffeaa7;
-}
+<p class="frase">“Educar no es llenar mentes, es encender posibilidades.”</p>
 
-/* TARJETAS */
-.cards{
-display:flex;
-justify-content:center;
-gap:25px;
-flex-wrap:wrap;
-max-width:1000px;
-}
+<div class="nube"></div>
+<div class="sol"></div>
 
-.card{
-padding:25px;
-border-radius:20px;
-width:180px;
-text-align:center;
-text-decoration:none;
-color:#333;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.3s;
-}
+</section>
 
-.card:hover{
-transform:translateY(-10px);
-}
+<!-- TARJETAS -->
+<div class="cards">
 
-/* ICONO */
-.icon{
-font-size:40px;
-margin-bottom:10px;
-}
+<a href="dia1.html" class="card c1">
+<div class="icon">🎨</div>
+<h3>Día 1</h3>
+<p>Observación inicial</p>
+<span>Ver día</span>
+</a>
 
-/* COLORES */
-.c1{background:#fff3cd;}
-.c2{background:#d4f8e8;}
-.c3{background:#d6eaff;}
-.c4{background:#ffd6e0;}
-.c5{background:#ffe5b4;}
+<a href="dia2.html" class="card c2">
+<div class="icon">🌿</div>
+<h3>Día 2</h3>
+<p>Exploración y aprendizaje</p>
+<span>Ver día</span>
+</a>
 
-/* BOTON */
-.card span{
-display:inline-block;
-margin-top:10px;
-padding:8px 15px;
-border-radius:10px;
-font-size:14px;
-color:white;
-}
+<a href="dia3.html" class="card c3">
+<div class="icon">🌊</div>
+<h3>Día 3</h3>
+<p>Interacción social</p>
+<span>Ver día</span>
+</a>
 
-.c1 span{background:#ffb703;}
-.c2 span{background:#2ecc71;}
-.c3 span{background:#3a86ff;}
-.c4 span{background:#ff6b6b;}
-.c5 span{background:#ff8500;}
+<a href="dia4.html" class="card c4">
+<div class="icon">🌸</div>
+<h3>Día 4</h3>
+<p>Creatividad en el aula</p>
+<span>Ver día</span>
+</a>
+
+<a href="dia5.html" class="card c5">
+<div class="icon">⭐</div>
+<h3>Día 5</h3>
+<p>Reflexión final</p>
+<span>Ver día</span>
+</a>
+
+</div>
+
+</body>
+</html>
