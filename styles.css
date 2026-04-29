@@ -1,232 +1,102 @@
-/* ========================= */
-/* 🔥 RESET GENERAL */
-/* ========================= */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
+/* ===== BASE ===== */
 body{
-font-family:'Poppins',sans-serif;
-overflow-x:hidden;
-animation:fadeIn 1s ease;
+margin:0;
+font-family:Poppins;
+background:#f6f9fb;
 }
 
-@keyframes fadeIn{
-from{opacity:0; transform:scale(1.01);}
-to{opacity:1; transform:scale(1);}
+/* ===== NAV ===== */
+.nav{
+display:flex;
+justify-content:space-between;
+padding:20px 40px;
+background:white;
+border-radius:0 0 20px 20px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
 
-/* ========================= */
-/* 🌈 FONDO ANIMADO GLOBAL */
-/* ========================= */
-.bg-main{
-background: linear-gradient(135deg,#ff4d6d,#7209b7,#3a86ff,#00c9a7);
-background-size:400% 400%;
-animation:fondo 12s ease infinite;
-color:white;
+.nav a{
+margin:0 10px;
+text-decoration:none;
+color:#555;
 }
 
-@keyframes fondo{
-0%{background-position:0%}
-50%{background-position:100%}
-100%{background-position:0%}
-}
-
-/* ========================= */
-/* 🎀 TITULO KIDS */
-/* ========================= */
-.titulo-kids{
-font-family:'Fredoka',sans-serif;
-font-size:60px;
+/* ===== HERO ===== */
+.hero{
 text-align:center;
-margin-top:80px;
-letter-spacing:2px;
+padding:60px 20px;
 }
 
-.titulo-kids span:nth-child(1){color:#ff6b6b;}
-.titulo-kids span:nth-child(2){color:#feca57;}
-.titulo-kids span:nth-child(3){color:#48dbfb;}
-.titulo-kids span:nth-child(4){color:#1dd1a1;}
-.titulo-kids span:nth-child(5){color:#ff9ff3;}
-.titulo-kids span:nth-child(6){color:#54a0ff;}
-
-.sub{
-text-align:center;
-opacity:.9;
-margin-bottom:40px;
+.titulo-color{
+font-family:Fredoka;
+font-size:70px;
+margin:0;
 }
 
-/* ========================= */
-/* 🧱 GRID INDEX */
-/* ========================= */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+.titulo-color span:nth-child(1){color:#ff6b6b;}
+.titulo-color span:nth-child(2){color:#feca57;}
+.titulo-color span:nth-child(3){color:#48dbfb;}
+.titulo-color span:nth-child(4){color:#1dd1a1;}
+.titulo-color span:nth-child(5){color:#ff9ff3;}
+.titulo-color span:nth-child(6){color:#54a0ff;}
+
+.hero h2{
+font-size:40px;
+margin:0;
+color:#333;
+}
+
+.hero p{
+color:#666;
+}
+
+/* ===== DIAS ===== */
+.dias{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 padding:40px;
-max-width:1100px;
-margin:auto;
 }
 
 .card{
-padding:50px 20px;
-border-radius:25px;
+width:200px;
+padding:25px;
+border-radius:20px;
 text-align:center;
-text-decoration:none;
 color:white;
-font-weight:bold;
-font-size:22px;
+box-shadow:0 15px 30px rgba(0,0,0,.1);
 transition:.3s;
-box-shadow:0 15px 40px rgba(0,0,0,.3);
-position:relative;
-overflow:hidden;
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.05);
+transform:translateY(-10px);
 }
 
-/* EFECTO LUZ */
-.card::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-top:-100%;
-left:-100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
-transition:.6s;
-}
-
-.card:hover::before{
-top:100%;
-left:100%;
-}
-
-/* COLORES DIAS */
-.d1{background:linear-gradient(135deg,#ffd60a,#ffb703);}
-.d2{background:linear-gradient(135deg,#2ecc71,#52b788);}
-.d3{background:linear-gradient(135deg,#3a86ff,#4cc9f0);}
-.d4{background:linear-gradient(135deg,#ff6b6b,#ff8fab);}
-.d5{background:linear-gradient(135deg,#ff8500,#ffb703);}
-
-/* ========================= */
-/* 📦 CONTENEDOR DIAS */
-/* ========================= */
-.container{
-max-width:1100px;
-margin:60px auto;
-background:#fff;
-border-radius:25px;
-display:flex;
-overflow:hidden;
-box-shadow:0 20px 50px rgba(0,0,0,.1);
-transition:.4s;
-}
-
-.container:hover{
-transform:scale(1.01);
-}
-
-/* ========================= */
-/* 🖼 GALERIA */
-/* ========================= */
-.galeria{
-width:55%;
-position:relative;
-}
-
-.galeria img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:opacity .6s ease, transform 6s ease;
-}
-
-/* EFECTO CINE */
-.galeria img:hover{
-transform:scale(1.08);
-}
-
-/* BOTONES SLIDER */
-.btn{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-background:rgba(255,255,255,.8);
-border:none;
-padding:10px;
-cursor:pointer;
-border-radius:50%;
-font-size:18px;
-transition:.3s;
-}
-
-.btn:hover{
+.card a{
+display:inline-block;
+margin-top:10px;
+padding:8px 15px;
 background:white;
-transform:translateY(-50%) scale(1.1);
+color:#333;
+border-radius:10px;
+text-decoration:none;
 }
 
-.left{left:10px;}
-.right{right:10px;}
+/* COLORES */
+.dia1{background:#ffd166;}
+.dia2{background:#06d6a0;}
+.dia3{background:#4cc9f0;}
+.dia4{background:#ff6b6b;}
+.dia5{background:#f77f00;}
 
-/* ========================= */
-/* 📝 TEXTO */
-/* ========================= */
-.texto{
-width:45%;
-padding:40px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-}
-
-.texto h1{
-font-family:'Fredoka';
-font-size:35px;
-margin-bottom:20px;
-}
-
-/* ========================= */
-/* 🎴 BLOQUES */
-/* ========================= */
-.box{
-padding:15px;
-border-radius:12px;
-margin-bottom:15px;
-font-size:15px;
-line-height:1.6;
-}
-
-/* DIA 1 */
-.dia1{background:#fff8e1; border-left:5px solid #ffb703;}
-.dia1 h1{color:#ffb703;}
-
-/* DIA 2 */
-.dia2{background:#f1fff7; border-left:5px solid #2ecc71;}
-.dia2 h1{color:#2ecc71;}
-
-/* ========================= */
-/* 📱 RESPONSIVE */
-/* ========================= */
-@media(max-width:900px){
-
-.container{
-flex-direction:column;
-}
-
-.galeria, .texto{
-width:100%;
-}
-
-.texto{
-padding:25px;
-}
-
-.titulo-kids{
-font-size:40px;
-}
-
+/* ===== INFO ===== */
+.info{
+background:white;
+margin:40px auto;
+padding:30px;
+border-radius:20px;
+max-width:800px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
 }
