@@ -10,16 +10,18 @@
 body{
     margin:0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(180deg, #eef5ff, #ffffff);
+    background: linear-gradient(180deg, #fff0f7, #ffffff);
     color:#333;
 }
 
+/* HERO */
 .hero{
-    background: linear-gradient(135deg, #ffd6ec, #ffeaf5);
+    background: linear-gradient(135deg, #ffc1dc, #ffe4f0);
     padding:60px 20px;
     text-align:center;
     border-bottom-left-radius:50px;
     border-bottom-right-radius:50px;
+    animation: fadeDown 1s ease;
 }
 
 .hero h1{
@@ -27,12 +29,18 @@ body{
     margin:0;
 }
 
+.hero p{
+    opacity:0.8;
+}
+
+/* CONTENEDOR */
 .container{
     padding:20px;
     max-width:1000px;
     margin:auto;
 }
 
+/* INFO */
 .info{
     display:flex;
     gap:15px;
@@ -47,8 +55,14 @@ body{
     border-radius:20px;
     box-shadow:0 10px 20px rgba(0,0,0,0.08);
     font-size:14px;
+    transition:0.3s;
 }
 
+.card-info:hover{
+    transform:translateY(-5px);
+}
+
+/* GRID */
 .grid{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -62,39 +76,47 @@ body{
     border-radius:25px;
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
     transition:0.3s;
+    animation: fadeUp 0.8s ease;
 }
 
 .card:hover{
     transform:translateY(-8px);
 }
 
+/* IMAGEN */
 .image-box{
     margin-top:30px;
     border-radius:30px;
     overflow:hidden;
     box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    animation: fadeUp 1s ease;
 }
 
 .image-box img{
     width:100%;
 }
 
+/* REFLEXIÓN */
 .reflexion{
     margin-top:30px;
     padding:25px;
     background:#fff0f7;
     border-left:6px solid #ff6fa5;
     border-radius:20px;
+    animation: fadeUp 1s ease;
 }
 
+/* TEORÍA */
 .teoria{
     margin-top:30px;
     background:white;
     padding:25px;
     border-radius:20px;
     box-shadow:0 10px 20px rgba(0,0,0,0.08);
+    animation: fadeUp 1.2s ease;
 }
 
+/* FRASES */
 .frases{
     display:flex;
     gap:15px;
@@ -108,8 +130,14 @@ body{
     border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,0.05);
     font-size:14px;
+    transition:0.3s;
 }
 
+.frase:hover{
+    transform:scale(1.05);
+}
+
+/* BOTONES */
 .nav{
     margin-top:40px;
     display:flex;
@@ -122,6 +150,34 @@ body{
     background:#ff6fa5;
     color:white;
     text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ff4d94;
+}
+
+/* ANIMACIONES */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 </style>
