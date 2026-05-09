@@ -7,7 +7,6 @@
 
 <style>
 
-/* 🌈 RESET */
 body{
     margin:0;
     font-family: 'Segoe UI', sans-serif;
@@ -15,14 +14,12 @@ body{
     color:#333;
 }
 
-/* 🌊 HERO */
 .hero{
     background: linear-gradient(135deg, #a8d8ff, #d4f1ff);
     padding:60px 20px;
     text-align:center;
     border-bottom-left-radius:50px;
     border-bottom-right-radius:50px;
-    animation: fadeDown 1s ease;
 }
 
 .hero h1{
@@ -30,18 +27,12 @@ body{
     margin:0;
 }
 
-.hero p{
-    opacity:0.8;
-}
-
-/* 📦 CONTENEDOR */
 .container{
     padding:20px;
     max-width:1000px;
     margin:auto;
 }
 
-/* 📅 TARJETAS INFO */
 .info{
     display:flex;
     gap:15px;
@@ -58,7 +49,6 @@ body{
     font-size:14px;
 }
 
-/* 🧩 TARJETAS */
 .grid{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -72,18 +62,12 @@ body{
     border-radius:25px;
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
     transition:0.3s;
-    animation: fadeUp 1s ease;
 }
 
 .card:hover{
     transform:translateY(-8px);
 }
 
-.card h3{
-    margin-top:0;
-}
-
-/* 📸 IMAGEN */
 .image-box{
     margin-top:30px;
     border-radius:30px;
@@ -93,10 +77,8 @@ body{
 
 .image-box img{
     width:100%;
-    display:block;
 }
 
-/* 🌱 REFLEXIÓN */
 .reflexion{
     margin-top:30px;
     padding:25px;
@@ -105,7 +87,6 @@ body{
     border-radius:20px;
 }
 
-/* 📚 TEORÍA */
 .teoria{
     margin-top:30px;
     background:white;
@@ -114,7 +95,6 @@ body{
     box-shadow:0 10px 20px rgba(0,0,0,0.08);
 }
 
-/* 💬 FRASES */
 .frases{
     display:flex;
     gap:15px;
@@ -130,7 +110,6 @@ body{
     font-size:14px;
 }
 
-/* 🔙 BOTONES */
 .nav{
     margin-top:40px;
     display:flex;
@@ -139,28 +118,10 @@ body{
 
 .btn{
     padding:12px 20px;
-    border:none;
     border-radius:20px;
     background:#6bbcff;
     color:white;
-    cursor:pointer;
     text-decoration:none;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#4da6ff;
-}
-
-/* ✨ ANIMACIONES */
-@keyframes fadeUp{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes fadeDown{
-    from{opacity:0; transform:translateY(-20px);}
-    to{opacity:1; transform:translateY(0);}
 }
 
 </style>
@@ -168,65 +129,69 @@ body{
 
 <body>
 
-<!-- 🌈 HERO -->
 <div class="hero">
     <h1>Día 1</h1>
-    <p>Inicio de la experiencia pedagógica en el aula</p>
+    <p>Aprendizaje didáctico a través del arte</p>
 </div>
 
 <div class="container">
 
-<!-- 📅 INFO -->
 <div class="info">
-    <div class="card-info">📆 Fecha: [Agregar]</div>
-    <div class="card-info">📍 Lugar: [Agregar]</div>
-    <div class="card-info">👩‍🏫 Grupo: [Agregar]</div>
+    <div class="card-info">📆 09 de Agosto</div>
+    <div class="card-info">📍 Sede Francisco J. Ruiz</div>
+    <div class="card-info">👩‍🏫 Observación</div>
+    <div class="card-info">👤 Valentina Caldon López</div>
 </div>
 
-<!-- 🧩 EXPERIENCIA -->
 <div class="grid">
 
-    <div class="card">
-        <h3>👀 Observación</h3>
-        <p>Describe lo que observaste en el aula...</p>
-    </div>
+<div class="card">
+    <h3>👀 Observación</h3>
+    <p>
+    La docente desarrolló una actividad enfocada en el aprendizaje mediante el arte y la exploración de figuras geométricas, donde los estudiantes organizaron figuras de diferentes tamaños y colores sobre cartulina.
+    </p>
+</div>
 
-    <div class="card">
-        <h3>🎯 Actividad</h3>
-        <p>Explica la actividad realizada con los niños...</p>
-    </div>
+<div class="card">
+    <h3>🎯 Actividad</h3>
+    <p>
+    La docente explicó las instrucciones con claridad, usó ejemplos visuales y acompañó constantemente a los estudiantes, promoviendo la creatividad y la organización del espacio.
+    </p>
+</div>
 
-    <div class="card">
-        <h3>🤝 Interacción</h3>
-        <p>Cómo fue la interacción con los estudiantes...</p>
-    </div>
+<div class="card">
+    <h3>🤝 Interacción</h3>
+    <p>
+    Se evidenció trabajo colaborativo, diálogo entre estudiantes y un ambiente de confianza donde los niños compartieron materiales y expresaron satisfacción por sus creaciones.
+    </p>
+</div>
 
 </div>
 
-<!-- 📸 IMAGEN -->
 <div class="image-box">
-    <img src="imagen1.jpg" alt="Evidencia del día">
+    <img src="imagen1.jpg" alt="Actividad del día">
 </div>
 
-<!-- 🌱 REFLEXIÓN -->
 <div class="reflexion">
     <h3>🌱 Reflexión pedagógica</h3>
-    <p>Reflexión crítica sobre la experiencia vivida...</p>
+    <p>
+    La experiencia permitió comprender que la didáctica en educación inicial debe ser activa, creativa y significativa. El arte se consolida como herramienta clave para el desarrollo emocional, cognitivo y creativo de los estudiantes.
+    Además, se reconoce la importancia de generar ambientes seguros y afectivos que favorezcan la exploración y el aprendizaje autónomo.
+    </p>
 </div>
 
-<!-- 📚 TEORÍA -->
 <div class="teoria">
     <h3>📚 Sustento teórico</h3>
-    <p>Aquí puedes incluir autores, teorías o fundamentos pedagógicos...</p>
+    <p>
+    Desde el enfoque constructivista, Jean Piaget plantea que el conocimiento se construye a partir de la interacción con el entorno. Asimismo, Lev Vygotsky resalta la importancia de la interacción social y el acompañamiento docente en el aprendizaje dentro de la zona de desarrollo próximo.
+    </p>
 </div>
 
-<!-- 💬 FRASES -->
 <div class="frases">
-    <div class="frase">💬 “Frase importante 1”</div>
-    <div class="frase">💬 “Frase importante 2”</div>
+    <div class="frase">💬 “El conocimiento se construye a través de la experiencia”</div>
+    <div class="frase">💬 “El aprendizaje inicia en lo social y luego se interioriza”</div>
 </div>
 
-<!-- 🔙 NAVEGACIÓN -->
 <div class="nav">
     <a href="index.html" class="btn">🏠 Inicio</a>
     <a href="dia2.html" class="btn">➡ Día 2</a>
