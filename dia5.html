@@ -1,1 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Día 4</title>
 
+<style>
+
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #fff4f8, #ffffff);
+    color:#333;
+}
+
+/* 🌈 HERO */
+.hero{
+    background: linear-gradient(135deg, #ffb6c1, #ffd6e7);
+    padding:60px 20px;
+    text-align:center;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
+}
+
+.hero h1{
+    font-size:40px;
+    margin:0;
+}
+
+/* CONTENEDOR */
+.container{
+    padding:20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+/* INFO */
+.info{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:-40px;
+}
+
+.card-info{
+    background:white;
+    padding:15px 20px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.08);
+    font-size:14px;
+}
+
+/* TARJETAS */
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* IMAGEN */
+.image-box{
+    margin-top:30px;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.image-box img{
+    width:100%;
+}
+
+/* REFLEXIÓN */
+.reflexion{
+    margin-top:30px;
+    padding:25px;
+    background:#fff0f5;
+    border-left:6px solid #ff6b81;
+    border-radius:20px;
+}
+
+/* TEORÍA */
+.teoria{
+    margin-top:30px;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* FRASES */
+.frases{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.frase{
+    background:#fff;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    font-size:14px;
+}
+
+/* BOTONES */
+.nav{
+    margin-top:40px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.btn{
+    padding:12px 20px;
+    border-radius:20px;
+    background:#ff6b81;
+    color:white;
+    text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <h1>Día 4</h1>
+    <p>Ambiente de aprendizaje mediado por el juego</p>
+</div>
+
+<div class="container">
+
+<div class="info">
+    <div class="card-info">📆 23 de Abril</div>
+    <div class="card-info">📍 Sede Francisco J. Ruiz</div>
+    <div class="card-info">👩‍🏫 Observación</div>
+    <div class="card-info">👤 Valentina Caldon López</div>
+</div>
+
+<div class="grid">
+
+<div class="card">
+    <h3>🎉 Experiencia</h3>
+    <p>
+    La jornada se desarrolló en el marco del Día del Niño, donde los estudiantes asistieron con peinados creativos. La institución organizó actividades como inflables, juegos, baile y recorridos por diferentes espacios, promoviendo la alegría y la participación.
+    </p>
+</div>
+
+<div class="card">
+    <h3>🎯 Actividades</h3>
+    <p>
+    Los niños disfrutaron de múltiples experiencias lúdicas: juegos libres, consumo de helado, exploración del parque y construcción con bloques, favoreciendo la imaginación y el aprendizaje significativo.
+    </p>
+</div>
+
+<div class="card">
+    <h3>🤝 Interacción</h3>
+    <p>
+    Se evidenció un ambiente de interacción social, cooperación y disfrute colectivo, donde los estudiantes compartieron experiencias y fortalecieron vínculos a través del juego.
+    </p>
+</div>
+
+</div>
+
+<div class="image-box">
+    <img src="dia4.jpg" alt="Día del niño">
+</div>
+
+<div class="reflexion">
+    <h3>🌱 Reflexión pedagógica</h3>
+    <p>
+    Esta experiencia resalta la importancia de diseñar ambientes flexibles donde el estudiante explore, interactúe y construya conocimiento desde su iniciativa. El rol del docente se enfoca en acompañar y propiciar experiencias significativas centradas en el juego, la creatividad y la interacción social.
+    </p>
+</div>
+
+<div class="teoria">
+    <h3>📚 Sustento teórico</h3>
+    <p>
+    Desde Piaget, el juego favorece la construcción del conocimiento mediante la interacción con la realidad. Vygotsky resalta la importancia de la interacción social en el aprendizaje. Montessori enfatiza ambientes que promuevan autonomía y exploración, mientras Huizinga reconoce el juego como un elemento fundamental de la cultura.
+    </p>
+</div>
+
+<div class="frases">
+    <div class="frase">💬 “El juego es la base del aprendizaje en la infancia”</div>
+    <div class="frase">💬 “Aprender también es disfrutar, explorar y compartir”</div>
+</div>
+
+<div class="nav">
+    <a href="dia3.html" class="btn">⬅ Día 3</a>
+    <a href="index.html" class="btn">🏠 Inicio</a>
+    <a href="dia5.html" class="btn">➡ Día 5</a>
+</div>
+
+</div>
+
+</body>
+</html>
